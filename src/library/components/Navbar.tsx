@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className="mr-4 hover:cursor-pointer items-center justify-center flex hover:scale-105 transition-all delay-100  px-2 rounded-md">
           <Link to={"/"}>
             <text className="text-2xl font-bold bg-linear text-transparent bg-clip-text">
-              Logo
+              Hey!👋
             </text>
           </Link>
         </div>

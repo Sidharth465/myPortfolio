@@ -9,13 +9,14 @@ const Navbar = () => {
       name: "Home",
       slug: "/",
     },
-    {
-      name: "Contact-Us",
-      slug: "/contact-us",
-    },
+
     {
       name: "Experience",
       slug: "/experience",
+    },
+    {
+      name: "Contact-Us",
+      slug: "/contact-us",
     },
   ];
   return (
@@ -24,7 +25,7 @@ const Navbar = () => {
         {/* logo section */}
         <div className="mr-4 hover:cursor-pointer items-center justify-center flex hover:scale-105 transition-all delay-100  px-2 rounded-md">
           <Link to={"/"}>
-            <text className="text-2xl font-bold bg-linear text-transparent bg-clip-text">
+            <text className="text-2xl font-serif font-extrabold bg-linear2 text-transparent bg-clip-text">
               Hey!👋
             </text>
           </Link>
@@ -50,56 +51,62 @@ const Navbar = () => {
         </ul>
         {/* mobile menu */}
         <div
-          className="ml-auto flex sm:hidden"
+          className="ml-auto  flex justify-center items-center sm:hidden"
           onClick={() => setIsNavOpen((prev) => !prev)}
         >
           {isNavOpen ? (
             <svg
-              className="h-8 w-8 animate-pulse text-neutral-400"
+              className={`${isNavOpen && "animate-rotateBackward"} h-8  w-8 `}
               viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
+              stroke="url(#gradient)" // Apply gradient here
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#FA5252" />
+                  <stop offset="100%" stopColor="#DD2476" />
+                </linearGradient>
+              </defs>
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           ) : (
             <div className="space-y-2">
-              <span className="block h-0.5 w-6 animate-pulse bg-gray-600"></span>
-              <span className="block h-0.5 w-6 animate-pulse bg-gray-600"></span>
-              <span className="block h-0.5 w-6 animate-pulse bg-gray-600"></span>
+              <span className="block h-0.5 w-6  bg-linear2"></span>
+              <span className="block h-0.5 w-6 animate-pulse bg-linear2"></span>
+              <span className="block h-0.5 w-6  bg-linear2"></span>
             </div>
           )}
         </div>
       </nav>
       {isNavOpen && (
-        <div className="flex sm:hidden   w-full justify-center items-center ">
-          <ul className="flex  flex-col py-2  items-center justify-center rounded-md mx-2 w-full  gap-7 backdrop-blur-3xl bg-opacity-30 bg-gray-800 ">
+        <div className="flex sm:hidden   overflow-hidden animate-spread justify-center items-center ">
+          <ul className="flex   flex-col py-4  items-center justify-center rounded-md mx-2 w-full   gap-7 backdrop-blur-3xl bg-opacity-50 bg-gray-800 ">
             {navItem?.map((item) => (
               <li
                 // onClick={() => setIsNavOpen((prev) => !prev)}
                 key={item?.name}
-                className=" mx-2 animate-pulse  px-2 flex items-center hover:cursor-pointer hover:scale-110 transition-all delay-100 rounded-md"
+                className=" mx-2    px-2 flex items-center hover:cursor-pointer hover:scale-110 transition-all delay-100 rounded-md"
               >
                 <Link to={item?.slug}>
                   <div className=" justify-center flex flex-col  ">
                     <text
                       className={` ${
                         location.pathname == item?.slug
-                          ? "bg-linear2"
-                          : "bg-white"
-                      }     underline text-transparent bg-clip-text font-semibold `}
+                          ? "bg-linear2 scale-110"
+                          : "bg-neutral-400 scale-100"
+                      }     underline text-transparent bg-clip-text font-semibold  `}
                     >
                       {item?.name}
                     </text>
                     <span
-                      className={`w-full h-[1px]  ${
+                      className={`w-full h-[2px]   ${
                         location.pathname == item?.slug
-                          ? "bg-linear"
-                          : "bg-white"
+                          ? "bg-linear animate-extendX scale-110"
+                          : "scale-100"
                       }   `}
                     />
                   </div>

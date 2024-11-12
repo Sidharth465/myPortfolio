@@ -25,7 +25,7 @@ const Navbar = () => {
         {/* logo section */}
         <div className="mr-4 hover:cursor-pointer items-center justify-center flex hover:scale-105 transition-all delay-100  px-2 rounded-md">
           <Link to={"/"}>
-            <text className="text-2xl font-serif font-extrabold bg-linear2 text-transparent bg-clip-text">
+            <text className="text-2xl font-poppins font-extrabold bg-linear2 text-transparent bg-clip-text">
               Hey!👋
             </text>
           </Link>
@@ -33,20 +33,20 @@ const Navbar = () => {
         {/* menu */}
         <ul className="ml-auto hidden sm:flex">
           {navItem?.map((item) => (
-            <li
-              key={item?.name}
+            <Link
+              to={item?.slug}
               className={` mx-2  animate-pulse  ${
                 location.pathname == item?.slug
                   ? "bg-linear2"
                   : "bg-cardbackground"
               }   px-2 flex items-center hover:cursor-pointer hover:scale-105 transition-all delay-100 rounded-md`}
             >
-              <Link to={item?.slug}>
+              <li key={item?.name}>
                 <div>
                   <text className="font-semibold text-white">{item?.name}</text>
                 </div>
-              </Link>
-            </li>
+              </li>
+            </Link>
           ))}
         </ul>
         {/* mobile menu */}

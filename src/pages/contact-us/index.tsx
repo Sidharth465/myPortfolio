@@ -1,10 +1,20 @@
+import AnimatedSection from "@library/components/AnimatedSection";
 import React from "react";
 
-const ContactUs = () => {
+type SectionProps = {
+  refProp: React.RefObject<HTMLDivElement>;
+};
+
+const ContactUs: React.FC<SectionProps> = ({ refProp }) => {
   return (
-    <div className="flex justify-center items-center  text-white">
-      Contact us
-    </div>
+    <AnimatedSection>
+      <div
+        ref={refProp}
+        className="flex h-[100vh] justify-center items-center bg-crystalblue  text-white"
+      >
+        Contact us
+      </div>
+    </AnimatedSection>
   );
 };
 

@@ -17,8 +17,8 @@ export default {
         background: "#000000",
         crystalblue: "#6AB5B9",
         neutralgray: "#A6A6A6",
-        hoverborder: "#C17CEB",
         borderbg: "#DB2E7A",
+        hoverborder: "#C17CEB",
       },
       backgroundImage: {
         linear:

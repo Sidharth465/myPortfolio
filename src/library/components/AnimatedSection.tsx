@@ -3,14 +3,16 @@ import "../../index.css";
 
 const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(sectionRef.current);
+          if (sectionRef.current) {
+            observer.unobserve(sectionRef.current);
+          }
         }
       },
       { threshold: 0.3 } // Adjust threshold for more control

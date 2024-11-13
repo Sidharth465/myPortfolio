@@ -35,7 +35,7 @@ const Navbar = () => {
           {navItem?.map((item) => (
             <Link
               to={item?.slug}
-              className={` mx-2  animate-pulse  ${
+              className={` mx-2    ${
                 location.pathname == item?.slug
                   ? "bg-linear2"
                   : "bg-cardbackground"

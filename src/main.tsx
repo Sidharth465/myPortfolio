@@ -1,11 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from "./App.tsx";
+import "./index.css";
 import Home from "./pages/home/index.tsx";
-import ContactUs from "./pages/contact-us/index.tsx";
-import Experience from "./pages/Experience/index.tsx";
 import NotFound from "./pages/NotFound/NotFound.tsx";
 
 const router = createBrowserRouter([
@@ -17,14 +15,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      {
-        path: "/contact-us",
-        element: <ContactUs />,
-      },
-      {
-        path: "/experience",
-        element: <Experience />,
-      },
+
       {
         path: "/*",
         element: <NotFound />,

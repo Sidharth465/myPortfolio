@@ -10,7 +10,7 @@ const ContactUs: React.FC<SectionProps> = ({ refProp }) => {
     <AnimatedSection>
       <div
         ref={refProp}
-        className="flex h-[100vh] justify-center items-center bg-crystalblue  text-white"
+        className="flex  justify-center items-center bg-crystalblue  text-white"
       >
         Contact us
       </div>

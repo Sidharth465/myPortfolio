@@ -13,7 +13,7 @@ export default {
         primary: "#144679",
         secondary: "#1C9CEA",
         ocean: "#1C9CEA",
-        cardbackground: "#1D1D1D",
+        cardbackground: "#313131",
         background: "#000000",
         crystalblue: "#6AB5B9",
         neutralgray: "#A6A6A6",

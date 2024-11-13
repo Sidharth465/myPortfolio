@@ -33,7 +33,7 @@ const Heading = () => {
 
   return (
     <div className="flex   flex-col w-full h-full justify-center items-center sm:items-start ">
-      <text className="text-neutralgray text-xl">Welcome to my Portfolio</text>
+      <text className="text-white text-3xl">Welcome to my Portfolio.</text>
       <div className="flex flex-row gap-2 w-full justify-center sm:justify-start mt-5 items-center  h-[35px]">
         <text className="text-white  font-Poppins text-2xl font-bold">
           Hi! I'm{" "}
@@ -45,7 +45,7 @@ const Heading = () => {
           |
         </span>
       </div>
-      <div className="flex  px-4 sm:px-0">
+      <div className=" max-w-[500px] px-4 sm:px-0">
         <text className="font-light text-[15px]  text-neutralgray  font-Poppins text-start sm:text-start">
           I am a passionate final-year BTech CSE student and a versatile
           full-stack developer, crafting dynamic web experiences with React and

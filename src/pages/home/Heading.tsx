@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Heading = () => {
   const words = ["Sidharth Verma.", "Full-Stack Developer."];
@@ -32,27 +31,34 @@ const Heading = () => {
   }, [displayedText, isErasing, currentWordIndex]);
 
   return (
-    <div className="flex   flex-col w-full h-full justify-center items-center sm:items-start ">
-      <text className="text-white text-3xl">Welcome to my Portfolio.</text>
-      <div className="flex flex-row gap-2 w-full justify-center sm:justify-start mt-5 items-center  h-[35px]">
-        <text className="text-white  font-Poppins text-2xl font-bold">
+    <div className="flex flex-col w-full h-full justify-center items-center sm:items-start p-4 sm:p-0">
+      {/* Welcome Text */}
+      <h2 className="text-white text-3xl text-center">
+        Welcome to my Portfolio.
+      </h2>
+
+      {/* Typing Effect */}
+      <div className="flex flex-col sm:flex-row gap-2 w-full justify-center sm:justify-start mt-5 items-center min-h-[35px]">
+        <span className="text-white  text-xl sm:text-2xl font-bold font-poppins">
           Hi! I'm{" "}
-        </text>
-        <span className="text-borderbg font-poppins font-bold  text-2xl">
-          {displayedText}
         </span>
-        <span className="border-r-2 border-neutral-500 -ml-2 text-xl animate-blink inline-block">
-          |
-        </span>
+        <div className="flex items-center">
+          <span className="text-borderbg text-xl  sm:text-2xl font-bold font-poppins">
+            {displayedText}
+          </span>
+          <span className="border-r-2 border-neutral-500 text-xl animate-blink ml-1">
+            |
+          </span>
+        </div>
       </div>
-      <div className=" max-w-[500px] px-4 sm:px-0">
-        <text className="font-light text-[15px]  text-neutralgray  font-Poppins text-start sm:text-start">
-          I am a passionate final-year BTech CSE student and a versatile
-          full-stack developer, crafting dynamic web experiences with React and
-          building seamless mobile applications with React Native for both iOS
-          and Android.
-        </text>
-      </div>
+
+      {/* Description */}
+      <p className="max-w-[500px] text-neutralgray text-[15px] font-light font-poppins sm:text-start text-center mt-4">
+        I am a passionate final-year BTech CSE student and a versatile
+        full-stack developer, crafting dynamic web experiences with React and
+        building seamless mobile applications with React Native for both iOS and
+        Android.
+      </p>
     </div>
   );
 };

@@ -21,9 +21,9 @@ const Navbar = () => {
   ];
   return (
     <header className="py-3    bg-background">
-      <nav className=" flex flex-row px-2">
+      <nav className=" flex flex-row px-2  md:px-10">
         {/* logo section */}
-        <div className="mr-4 hover:cursor-pointer items-center justify-center flex hover:scale-105 transition-all delay-100  px-2 rounded-md">
+        <div className="mr-4  hover:cursor-pointer items-center justify-center flex hover:scale-105 transition-all delay-100  px-2 rounded-md">
           <Link to={"/"}>
             <text className="text-2xl font-poppins font-extrabold bg-linear2 text-transparent bg-clip-text">
               Hey!👋
@@ -31,7 +31,7 @@ const Navbar = () => {
           </Link>
         </div>
         {/* menu */}
-        <ul className="ml-auto hidden sm:flex">
+        <ul className="ml-auto hidden gap-1 sm:flex">
           {navItem?.map((item) => (
             <Link
               to={item?.slug}
@@ -91,7 +91,7 @@ const Navbar = () => {
                 key={item?.name}
                 className=" mx-2    px-2 flex items-center hover:cursor-pointer hover:scale-110 transition-all delay-100 rounded-md"
               >
-                <Link to={item?.slug}>
+                <Link to={item?.slug} onClick={() => setIsNavOpen(false)}>
                   <div className=" justify-center flex flex-col  ">
                     <text
                       className={` ${

@@ -38,7 +38,7 @@ const Home = () => {
             />
           </div>
         </div>
-        <div className="px-2 mt-10 sm:mt-0 flex sm:inline-block justify-center items-center  sm:px-[20px] md:px-[155px]">
+        <div className="px-2 mt-10 sm:mt-0 flex sm:inline-block justify-center items-center  sm:px-[20px] md:px-[155px] pb-5">
           <CustomButton
             processing={processing}
             onClick={DownloadResume}

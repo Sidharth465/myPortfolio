@@ -46,7 +46,7 @@ const Heading = () => {
           <span className="text-borderbg text-xl  sm:text-2xl font-bold font-poppins">
             {displayedText}
           </span>
-          <span className="border-r-2 border-neutral-500 text-xl animate-blink ml-1">
+          <span className="border-r-2 border-neutral-500 text-xl animate-blink ">
             |
           </span>
         </div>

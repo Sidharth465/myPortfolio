@@ -33,17 +33,17 @@ const Heading = () => {
   return (
     <div className="flex flex-col w-full h-full justify-center items-center sm:items-start p-4 sm:p-0">
       {/* Welcome Text */}
-      <h2 className="text-white text-3xl text-center">
-        Welcome to my Portfolio.
+      <h2 className="text-white  text-3xl  text-center">
+        Welcome to my Portfolio
       </h2>
 
       {/* Typing Effect */}
       <div className="flex flex-col sm:flex-row gap-2 w-full justify-center sm:justify-start mt-5 items-center min-h-[35px]">
-        <span className="text-white  text-xl sm:text-2xl font-bold font-poppins">
+        <span className="text-white  text-xl sm:text-xl md:text-2xl font-bold font-poppins">
           Hi! I'm{" "}
         </span>
         <div className="flex items-center">
-          <span className="text-borderbg text-xl  sm:text-2xl font-bold font-poppins">
+          <span className="text-borderbg text-xl  sm:text-xl md:text-2xl font-bold font-poppins">
             {displayedText}
           </span>
           <span className="border-r-2 border-neutral-500 text-xl animate-blink ">

@@ -43,20 +43,38 @@ const Home = () => {
               className="  object-contain h-[280px] sm:h-[350px] md:h-full min-w-[300px]"
               src={Avatar}
             />
-            <div className="flex flex-row  gap-3 md:gap-5   mt-5 items-center">
-              <img className="  object-contain " src={ReactIcon} />
-              <img className="  object-contain " src={ReduxIcon} />
+            <div className="flex flex-row  transition-all duration-200 gap-2 sm:gap-3  md:gap-4 lg:gap-5  mt-5 items-center">
+              <img
+                className="  object-contain h-[24px] w-[24px]"
+                src={ReactIcon}
+              />
+              <img
+                className="  object-contain h-[24px] w-[24px]"
+                src={ReduxIcon}
+              />
 
-              <img className="  object-contain " src={NodejsIcon} />
+              <img
+                className="  object-contain h-[24px] w-[24px]"
+                src={NodejsIcon}
+              />
               {/* <img className="  object-contain  " src={ExpressIcon} /> */}
-              <div className="flex flex-row items-center font-medium px-[2px] bg-cardbackground">
+              <div className="flex flex-row items-center font-medium px-[2px] ">
                 <text className="text-white text-[12px]">
                   Express.<span className="text-yellow-200">js</span>
                 </text>
               </div>
-              <img className="  object-contain " src={PostgreIcon} />
-              <img className="  object-contain " src={HtmlIcon} />
-              <img className="  object-contain " src={CssIcon} />
+              <img
+                className="  object-contain h-[24px] w-[24px]"
+                src={PostgreIcon}
+              />
+              <img
+                className="  object-contain h-[24px] w-[24px]"
+                src={HtmlIcon}
+              />
+              <img
+                className="  object-contain h-[24px] w-[24px]"
+                src={CssIcon}
+              />
               <img className="  object-contain  h-[24px]" src={JsIcon} />
             </div>
           </div>

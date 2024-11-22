@@ -37,7 +37,7 @@ const Navbar = () => {
               to={item?.slug}
               className={` mx-2    ${
                 location.pathname == item?.slug
-                  ? "bg-linear2"
+                  ? "bg-linear2 "
                   : "bg-cardbackground"
               }   px-2 flex items-center hover:cursor-pointer hover:scale-105 transition-all delay-100 rounded-md`}
             >
@@ -91,7 +91,7 @@ const Navbar = () => {
                 key={item?.name}
                 className=" mx-2    px-2 flex items-center hover:cursor-pointer hover:scale-110 transition-all delay-100 rounded-md"
               >
-                <Link to={item?.slug} onClick={() => setIsNavOpen(false)}>
+                <Link to={item?.slug}>
                   <div className=" justify-center flex flex-col  ">
                     <text
                       className={` ${

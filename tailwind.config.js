@@ -24,6 +24,8 @@ export default {
         linear:
           "linear-gradient(90deg, #515ECF 0%, #C53184 37%, #F3673A 75%, #DB2E7A 100%)",
         linear2: "linear-gradient(45deg, #FA5252 0%, #DD2476 100%)",
+        radial:
+          "radial-gradient(circle, rgba(var(--color-card), 0.2) 0%, rgba(var(--color-card), 0.6) 80%, rgba(var(--color-card), 0.9) 100%)",
       },
       keyframes: {
         typing: {
@@ -52,6 +54,16 @@ export default {
         extendX: {
           "0%": { transform: "scale(0)", transformOrigin: "left" },
           "100%": { transform: "scale(100%)", transformOrigin: "left" },
+        },
+        rotating: {
+          from: {
+            transform:
+              "perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(0)",
+          },
+          to: {
+            transform:
+              "perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(1turn)",
+          },
         },
       },
       animation: {

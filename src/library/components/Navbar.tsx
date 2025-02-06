@@ -4,23 +4,23 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const location = useLocation();
-  const navItem = [
-    {
-      name: "Home",
-      slug: "/",
-    },
+  // const navItem = [
+  //   {
+  //     name: "Home",
+  //     slug: "/",
+  //   },
 
-    {
-      name: "Experience",
-      slug: "/experience",
-    },
-    {
-      name: "Contact-Us",
-      slug: "/contact-us",
-    },
-  ];
+  //   {
+  //     name: "Experience",
+  //     slug: "/experience",
+  //   },
+  //   {
+  //     name: "Contact-Us",
+  //     slug: "/contact-us",
+  //   },
+  // ];
   return (
-    <header className="py-3    bg-background">
+    <header className="bg-background">
       <nav className=" flex flex-row px-2  md:px-10">
         {/* logo section */}
         <div className="mr-4  hover:cursor-pointer items-center justify-center flex hover:scale-105 transition-all delay-100  px-2 rounded-md">
@@ -31,7 +31,7 @@ const Navbar = () => {
           </Link>
         </div>
         {/* menu */}
-        <ul className="ml-auto hidden gap-1 sm:flex">
+        {/* <ul className="ml-auto hidden gap-1 sm:flex">
           {navItem?.map((item) => (
             <Link
               to={item?.slug}
@@ -48,9 +48,9 @@ const Navbar = () => {
               </li>
             </Link>
           ))}
-        </ul>
+        </ul> */}
         {/* mobile menu */}
-        <div
+        {/* <div
           className="ml-auto  flex justify-center items-center sm:hidden"
           onClick={() => setIsNavOpen((prev) => !prev)}
         >
@@ -80,9 +80,9 @@ const Navbar = () => {
               <span className="block h-0.5 w-6  bg-linear2"></span>
             </div>
           )}
-        </div>
+        </div> */}
       </nav>
-      {isNavOpen && (
+      {/* {isNavOpen && (
         <div className="flex sm:hidden   overflow-hidden animate-spread justify-center items-center ">
           <ul className="flex   flex-col py-4  items-center justify-center rounded-md mx-2 w-full   gap-7 backdrop-blur-3xl bg-opacity-50 bg-gray-800 ">
             {navItem?.map((item) => (
@@ -115,7 +115,7 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-      )}
+      )} */}
     </header>
   );
 };

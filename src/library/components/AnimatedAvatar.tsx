@@ -1,0 +1,26 @@
+import LottieFile from "@assets/images/Animation - 1738822088595.json";
+import Avatar from "@assets/images/avatar.png";
+import Lottie from 'lottie-react';
+import { FC } from "react";
+import SkillsIcons from "./SkillsIcons";
+
+
+
+const AnimatedAvatar:FC<{isMobile:boolean}> = ({isMobile}) => {
+    
+  return (
+
+    <div className='relative  w-full flex flex-col items-center justify-center'><Lottie style={{height:400,width:"100%"}} animationData={LottieFile} loop={true}/>
+    <img
+      className=" absolute   object-contain h-[200px] sm:h-[250px]   min-w-[300px]"
+      src={Avatar}
+    />
+     {isMobile && <div className="absolute bottom-0" ><SkillsIcons/></div>}
+    
+    </div>
+   
+
+  )
+}
+
+export default AnimatedAvatar

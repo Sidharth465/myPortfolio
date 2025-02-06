@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Strings } from "@utils/constants";
+
 
 const Heading = () => {
   const words = ["Sidharth Verma.", "Full-Stack Developer."];
@@ -31,9 +33,9 @@ const Heading = () => {
   }, [displayedText, isErasing, currentWordIndex]);
 
   return (
-    <div className="flex flex-col w-full h-full justify-center items-center sm:items-start p-4 sm:p-0">
+    <div className="flex flex-col w-full h-full justify-center items-center sm:items-start  ">
       {/* Welcome Text */}
-      <h2 className="text-white  text-3xl  text-center">
+      <h2 className="text-white  mt-5  sm:mt-0 text-3xl  text-center">
         Welcome to my Portfolio
       </h2>
 
@@ -53,11 +55,8 @@ const Heading = () => {
       </div>
 
       {/* Description */}
-      <p className="max-w-[500px] text-neutralgray text-[15px] font-light font-poppins sm:text-start text-center mt-4">
-        I am a passionate final-year BTech CSE student and a versatile
-        full-stack developer, crafting dynamic web experiences with React and
-        building seamless mobile applications with React Native for both iOS and
-        Android.
+      <p className="max-w-[500px] text-neutralgray text-base font-light font-poppins sm:text-start text-center mt-4">
+        {Strings?.HomePara}
       </p>
     </div>
   );

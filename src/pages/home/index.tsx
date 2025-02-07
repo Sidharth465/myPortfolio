@@ -3,13 +3,13 @@ import AnimatedSection from "@library/components/AnimatedSection";
 import CustomButton from "@library/components/CustomButton";
 import SkillsIcons from "@library/components/SkillsIcons";
 import { DownloadSvg } from "@library/utils/Svgs";
-import { useState } from "react";
+import { FC, useState } from "react";
 import Heading from "./Heading";
 
-const Home = () => {
+const Home:FC<{isMobile:boolean}> = ({isMobile}) => {
   const [processing, setProcessing] = useState(false);
 
-  const   isMobile = window.innerWidth <600;
+
 
   const downloadResume = async () => {
     setProcessing(true);
@@ -30,11 +30,11 @@ const Home = () => {
   return (
     <AnimatedSection>
       <div className="flex  flex-col bg-background">
-        <div className=" flex flex-col sm:flex-row justify-between items-center px-5 sm:px-10">
+        <div className=" flex flex-col sm:flex-row justify-between items-center ">
           <div className="order-2 sm:order-1"><Heading /></div>
           <div className="sm:order-2"><AnimatedAvatar isMobile ={isMobile} /></div>
         </div>
-        <div className=" flex flex-col sm:flex-row justify-between items-center px-10">
+        <div className=" flex flex-col sm:flex-row justify-between items-center ">
           <div className="order-2 sm:order-1 mt-5 sm:mt-0">
             <CustomButton
             processing={processing}

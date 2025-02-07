@@ -10,15 +10,13 @@ export default {
         Poppins: ["Poppins", "sans-serif"], // Use Poppins as the default sans-serif font
       },
       colors: {
-        primary: "#144679",
-        secondary: "#1C9CEA",
-        ocean: "#1C9CEA",
         cardbackground: "#313131",
         background: "#000000",
         crystalblue: "#6AB5B9",
         neutralgray: "#A6A6A6",
         borderbg: "#DB2E7A",
         hoverborder: "#C17CEB",
+        cardBg:"#3D3A3A"
       },
       backgroundImage: {
         linear:

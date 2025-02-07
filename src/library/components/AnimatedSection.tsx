@@ -30,7 +30,7 @@ const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
   return (
     <div
       ref={sectionRef}
-      className={` animated-section ${isVisible ? "fade-in" : ""}`}
+      className={`w-full animated-section ${isVisible ? "fade-in" : ""}`}
     >
       {children}
     </div>

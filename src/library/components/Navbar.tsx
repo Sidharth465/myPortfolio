@@ -15,15 +15,15 @@ const Navbar = () => {
   //     slug: "/experience",
   //   },
   //   {
-  //     name: "Contact-Us",
+  //     name: "Contact-Us",Ø
   //     slug: "/contact-us",
   //   },
   // ];
   return (
-    <header className="bg-background">
-      <nav className=" flex flex-row px-2  md:px-10">
+    <header className= "py-1 sm:py-5 bg-background">
+      <nav className=" flex flex-row px-2  ">
         {/* logo section */}
-        <div className="mr-4  hover:cursor-pointer items-center justify-center flex hover:scale-105 transition-all delay-100  px-2 rounded-md">
+        <div className="mr-4  hover:cursor-pointer items-center justify-center flex hover:scale-105 transition-all delay-100   rounded-md">
           <Link to={"/"}>
             <text className="text-2xl font-poppins font-extrabold bg-linear2 text-transparent bg-clip-text">
               Portfolio.io👋

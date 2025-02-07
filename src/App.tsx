@@ -1,18 +1,19 @@
 
-import ContactUs from "@pages/contact-us";
-import Experience from "@pages/experience";
 import Home from "@pages/home";
 import Navbar from "./library/components/Navbar";
+import Experience from "@pages/experience";
+import { FC } from "react";
 
-const App = () => {
+const App:FC = () => {
+  const   isMobile = window.innerWidth <600;
   return (
-    <div className=" h-[100vh] w-[100vw] flex bg-background  ">
-      <div className="flex-1   bg-black  ">
+    <div className="h-[100vh] w-[100vw]   bg-background  px-5 sm:px-10">
+    
         <Navbar />
-        <Home />
-        {/* <Experience />
-        <ContactUs /> */}
-      </div>
+        <Home isMobile={isMobile} />
+        <Experience  isMobile ={isMobile}/>
+        {/* <ContactUs /> */}
+
     </div>
   );
 };

@@ -40,4 +40,7 @@ declare interface  StringsType  {
   experieceData: Experience[];
   personalDetail: PersonalDetail;
   skillData: Skill[];
+  githubLink:string;
+  linkedInLink:string;
+  instagramLink:string;
 };

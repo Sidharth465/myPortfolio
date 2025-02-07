@@ -74,7 +74,11 @@ export const Strings:StringsType = {
         { id: 11, title: "PostgreSQL", imageUrl: PostgreIcon },
         { id: 12, title: "Node.js", imageUrl: NodejsIcon },
         { id: 13, title: "Express.js", imageUrl: ExpressIcon}
-      ]
+      ],
+      githubLink:"https://github.com/Sidharth465",
+      linkedInLink:"https://www.linkedin.com/in/siddharth-verma-b323b1175/",
+      instagramLink:"https://www.instagram.com/siddharthverma465/",
+
     
 }
 

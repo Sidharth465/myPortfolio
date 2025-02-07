@@ -17,8 +17,10 @@ const Home:FC<{isMobile:boolean}> = ({isMobile}) => {
       const link = document.createElement("a");
       link.href = `https://drive.google.com/uc?export=download&id=${import.meta.env.VITE_RESUME_ID
         }`;
-      // link.target = "#"
 
+
+        https://drive.google.com/file/d/1HJEvZz7Rx5jCByGgBESwQuH8ByMOZpv7/view?usp=sharing
+      link.target = "#"
       link.download = "resume.pdf";
       link.click();
     } catch (error) {

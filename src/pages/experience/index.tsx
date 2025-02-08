@@ -11,7 +11,7 @@ const Experience: React.FC<{isMobile:boolean}> = ({isMobile}) => {
 
   return (
     <AnimatedSection >
-      <div className="flex mt-10 pt-10 relative flex-col  w-full py-5 bg-background justify-center  items-center text-white">
+      <div className="flex mt-10 pt-10 relative flex-col  w-full py-5 justify-center  items-center text-white">
       <div  className="absolute top-5 left-0" ><h1 className="text-2xl text-transparent bg-linear2 font-bold  bg-clip-text"> Work Experience</h1></div>
     {!isMobile &&  <div  className="absolute top-12 left-[60px]" ><Arrow height={200}  width={200} /> </div>}
        

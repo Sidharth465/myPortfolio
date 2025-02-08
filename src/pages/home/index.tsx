@@ -31,7 +31,7 @@ const Home:FC<{isMobile:boolean}> = ({isMobile}) => {
   };
   return (
     <AnimatedSection>
-      <div className="flex  flex-col bg-background">
+      <div className="flex  flex-col ">
         <div className=" flex flex-col sm:flex-row justify-between items-center ">
           <div className="order-2 sm:order-1"><Heading /></div>
           <div className="sm:order-2"><AnimatedAvatar isMobile ={isMobile} /></div>

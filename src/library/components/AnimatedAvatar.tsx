@@ -10,7 +10,7 @@ const AnimatedAvatar:FC<{isMobile:boolean}> = ({isMobile}) => {
     
   return (
 
-    <div className='relative pb-5 sm:pb-0 w-full flex flex-col items-center justify-center'><Lottie style={{height:400,width:"100%"}} animationData={LottieFile} loop={true}/>
+    <div className='relative pb-5 sm:pb-0 w-full flex flex-col items-center justify-center'><Lottie style={{height:400,width:"100%"}} animationData={LottieFile} autoPlay ={false} loop={false}/>
     <img
       className=" absolute   object-contain h-[200px] sm:h-[250px]   min-w-[300px]"
       src={Avatar}

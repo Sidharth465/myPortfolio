@@ -5,23 +5,9 @@ import ContactImageurlBox from "./ContactImageurlBox";
 
 const Navbar = () => {
   
-  // const navItem = [
-  //   {
-  //     name: "Home",
-  //     slug: "/",
-  //   },
-
-  //   {
-  //     name: "Experience",
-  //     slug: "/experience",
-  //   },
-  //   {
-  //     name: "Contact-Us",Ø
-  //     slug: "/contact-us",
-  //   },
-  // ];
+  
   return (
-    <header className= "py-1 sm:py-5 bg-background">
+    <header className= "py-1 sm:py-5 sticky">
       <nav className=" flex flex-row px-2  items-center justify-between">
         {/* logo section */}
         <div className="mr-4  hover:cursor-pointer items-center justify-center flex hover:scale-105 transition-all delay-100   rounded-md">
@@ -31,63 +17,10 @@ const Navbar = () => {
             </text>
           </Link>
         </div>
-        {/* menu */}
-        {/* <ul className="ml-auto hidden gap-1 sm:flex">
-          {navItem?.map((item) => (
-            <Link
-              to={item?.slug}
-              className={` mx-2    ${
-                location.pathname == item?.slug
-                  ? "bg-linear2"
-                  : "bg-cardbackground"
-              }   px-2 flex items-center hover:cursor-pointer hover:scale-105 transition-all delay-100 rounded-md`}
-            >
-              <li key={item?.name}>
-                <div>
-                  <text className="font-semibold text-white">{item?.name}</text>
-                </div>
-              </li>
-            </Link>
-          ))}
-        </ul> */}
-        {/* mobile menu */}
-        {/* <div
-          className="ml-auto  flex justify-center items-center sm:hidden"
-          onClick={() => setIsNavOpen((prev) => !prev)}
-        >
-          {isNavOpen ? (
-            <svg
-              className={`${isNavOpen && "animate-rotateBackward"} h-8  w-8 `}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="url(#gradient)" // Apply gradient here
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <defs>
-                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#FA5252" />
-                  <stop offset="100%" stopColor="#DD2476" />
-                </linearGradient>
-              </defs>
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          ) : (
-            <div className="space-y-2">
-              <span className="block h-0.5 w-6  bg-linear2"></span>
-              <span className="block h-0.5 w-6 animate-pulse bg-linear2"></span>
-              <span className="block h-0.5 w-6  bg-linear2"></span>
-            </div>
-          )}
-        </div> */}
         <div className="flex flex-row items-center gap-5 ">
         <ContactImageurlBox  image={Github} bgColor="#ffff"  url={Strings.githubLink}/>
         <ContactImageurlBox   image={LinkedIn} url={Strings.linkedInLink}/>
         <ContactImageurlBox   image={Instagram} url={Strings.instagramLink}/>
-
-
       </div>
       </nav>
       {/* {isNavOpen && (

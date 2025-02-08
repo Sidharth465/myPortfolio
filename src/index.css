@@ -13,7 +13,6 @@
 .animated-section.fade-in {
   opacity: 1;
   transform: translateY(0);
-  animation-delay: 1000;
 }
 
 

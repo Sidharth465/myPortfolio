@@ -4,7 +4,7 @@ import AnimatedSection from './AnimatedSection'
 const ExperienceCard: FC<{ item: Experience, index: number }> = ({ item,  }) => {
     return (
         <AnimatedSection key={item?.id}>
-            <div className='rounded-tl-full border  rounded-br-full p-2  bg-linear2  '>
+            <div className='rounded-tl-full border border-neutralgray  rounded-br-full p-2  bg-linear2  '>
             <div className='flex    p-2  flex-row  bg-black rounded-md shadow-lg items-center  justify-start    backdrop-opacity-10 backdrop-blur-md  '>
                 <div
                     key={item?.id}

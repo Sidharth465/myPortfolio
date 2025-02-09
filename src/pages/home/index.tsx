@@ -10,6 +10,7 @@ const Home:FC<{isMobile:boolean}> = ({isMobile}) => {
   const [processing, setProcessing] = useState(false);
 
 
+  // ${import.meta.env.VITE_RESUME_ID}
 
   const downloadResume = async () => {
     setProcessing(true);

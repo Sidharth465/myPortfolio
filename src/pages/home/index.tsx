@@ -15,8 +15,7 @@ const Home:FC<{isMobile:boolean}> = ({isMobile}) => {
     setProcessing(true);
     try {
       const link = document.createElement("a");
-      link.href = `https://drive.google.com/uc?export=download&id=${import.meta.env.VITE_RESUME_ID
-        }`;
+      link.href = `https://drive.google.com/uc?export=download&id=1HJEvZz7Rx5jCByGgBESwQuH8ByMOZpv7`;
 
 
         https://drive.google.com/file/d/1HJEvZz7Rx5jCByGgBESwQuH8ByMOZpv7/view?usp=sharing

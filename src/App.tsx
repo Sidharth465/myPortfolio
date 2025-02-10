@@ -15,7 +15,7 @@ const App: FC = () => {
         <meta name="description" content="Explore the latest in technology, coding, and software development." />
         <meta property="og:title" content="TechBySid - Your Tech Hub" />
         <meta property="og:description" content="Explore the latest in technology, coding, and software development." />
-        <meta property="og:image" content="https://techbysid.netlify.app/thumbnail.jpg?v=2" />
+        <meta property="og:image" content="https://techbysid.netlify.app/thumbnail.png?v=2" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />

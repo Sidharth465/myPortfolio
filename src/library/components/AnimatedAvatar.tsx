@@ -1,4 +1,4 @@
-import LottieFile from "@assets/images/Animation - 1738822088595.json";
+import LottieFile from "@assets/images/lottieBg.json";
 import Avatar from "@assets/images/avatar.png";
 import Lottie from 'lottie-react';
 import { FC } from "react";

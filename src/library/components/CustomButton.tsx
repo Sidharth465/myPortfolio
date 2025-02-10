@@ -37,7 +37,7 @@ const CustomButton = ({
           )}
 
           {/* Title Section */}
-          <span className="flex pl-[25px] w-full items-center justify-center  text-white font-semibold transition-all duration-300 ease-in-out group-hover:text-transparent">
+          <span className="flex pl-[25px] w-full items-center justify-center  text-background font-semibold transition-all duration-300 ease-in-out group-hover:text-transparent">
             {title}
           </span>
         </>

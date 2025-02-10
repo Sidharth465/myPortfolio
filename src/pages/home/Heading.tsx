@@ -35,7 +35,7 @@ const Heading = () => {
   return (
     <div className="flex flex-col w-full h-full justify-center items-center sm:items-start  ">
       {/* Welcome Text */}
-      <h2 className="text-white  mt-5  sm:mt-0 text-3xl  text-center">
+      <h2 className=" bg-clip-text bg-linear text-transparent  mt-5  sm:mt-0 text-3xl  text-center">
         Welcome to my Portfolio
       </h2>
 
@@ -45,7 +45,7 @@ const Heading = () => {
           Hi! I'm{" "}
         </span>
         <div className="flex items-center">
-          <span className="text-borderbg text-xl  sm:text-xl md:text-2xl font-bold font-poppins">
+          <span className="text-borderbg text-xl  bg-clip-text bg-linear text-transparent sm:text-xl md:text-2xl font-bold font-poppins">
             {displayedText}
           </span>
           <span className="border-r-2 border-neutral-500 text-xl animate-blink ">

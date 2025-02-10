@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="mr-4  hover:cursor-pointer items-center justify-center flex hover:scale-105 transition-all delay-100   rounded-md">
           <Link to={"/"}>
             <text className="text-2xl font-poppins font-extrabold bg-linear2 text-transparent bg-clip-text">
-              Portfolio.io
+              Portfolio
             </text>
           </Link>
         </div>

@@ -1,13 +1,14 @@
 
-import Home from "@pages/home";
-import Navbar from "./library/components/Navbar";
-import Experience from "@pages/experience";
-import { FC } from "react";
 import Meteor from "@library/components/Meteor";
+import Experience from "@pages/experience";
+import Home from "@pages/home";
+import { FC } from "react";
 import { Helmet } from "react-helmet-async";
+import Navbar from "./library/components/Navbar";
+
 
 const App: FC = () => {
-  const isMobile = window.innerWidth < 600;
+  const isMobile = window.innerWidth < 640;
   return (
     <>
      <Helmet>
@@ -25,6 +26,7 @@ const App: FC = () => {
       </Helmet>
       <div className="h-[100vh] w-[100vw]   bg-background  px-5 sm:px-10">
       <Meteor />
+    
       <Navbar />
       <Home isMobile={isMobile} />
       <Experience isMobile={isMobile} />

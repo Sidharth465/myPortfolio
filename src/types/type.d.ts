@@ -4,6 +4,19 @@ declare interface ButtonProps {
   IconLeft?: React.ComponentType<any>;
   className?: string;
 }
+interface Project {
+  name: string;
+  description: string;
+}
+
+interface Work {
+  company: string;
+  location: string;
+  position: string;
+  duration: string;
+  tech_stack: string[];
+  projects: Project[];
+}
 
 
 declare interface PersonalDetail  {
@@ -43,4 +56,5 @@ declare interface  StringsType  {
   githubLink:string;
   linkedInLink:string;
   instagramLink:string;
+  work:Work[];
 };

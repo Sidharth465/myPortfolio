@@ -3,21 +3,18 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App.tsx";
 import "./index.css";
-import NotFound from "@pages/NotFound/NotFound.tsx";
+import NotFound from "@pages/not-found/NotFound.tsx";
 import { HelmetProvider } from "react-helmet-async";
 
-
-
 createRoot(document.getElementById("root")!).render(
-  <StrictMode >
+  <StrictMode>
     <HelmetProvider>
-    <BrowserRouter>
-    <Routes>
-      <Route  path="/" element={<App />}/>
-      <Route  path="/*" element={<NotFound />}/>
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </HelmetProvider>
-
   </StrictMode>
 );

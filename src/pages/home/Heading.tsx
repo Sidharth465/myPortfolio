@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Strings } from "@utils/constants";
 
-
 const Heading = () => {
   const words = ["Sidharth Verma.", "Full-Stack Developer."];
   const [displayedText, setDisplayedText] = useState("");
@@ -55,7 +54,7 @@ const Heading = () => {
       </div>
 
       {/* Description */}
-      <p className="max-w-[500px] text-neutralgray text-base font-light font-poppins sm:text-start text-center mt-4">
+      <p className="max-w-[500px] text-white opacity-80 text-base font-light font-poppins sm:text-start text-center mt-4">
         {Strings?.HomePara}
       </p>
     </div>

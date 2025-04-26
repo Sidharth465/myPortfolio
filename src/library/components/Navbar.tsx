@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 import ContactImageurlBox from "./ContactImageurlBox";
 
 const Navbar = () => {
-  
-  
   return (
-    <header className= "py-1 sm:py-5 sticky">
+    <header className="py-1 sm:py-5 sticky">
       <nav className=" flex flex-row px-2  items-center justify-between">
         {/* logo section */}
         <div className="mr-4  hover:cursor-pointer items-center justify-center flex hover:scale-105 transition-all delay-100   rounded-md">
@@ -18,10 +16,14 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex flex-row items-center gap-5 ">
-        <ContactImageurlBox  image={Github} bgColor="#ffff"  url={Strings.githubLink}/>
-        <ContactImageurlBox   image={LinkedIn} url={Strings.linkedInLink}/>
-        <ContactImageurlBox   image={Instagram} url={Strings.instagramLink}/>
-      </div>
+          <ContactImageurlBox
+            image={Github}
+            bgColor="#ffff"
+            url={Strings.githubLink}
+          />
+          <ContactImageurlBox image={LinkedIn} url={Strings.linkedInLink} />
+          <ContactImageurlBox image={Instagram} url={Strings.instagramLink} />
+        </div>
       </nav>
       {/* {isNavOpen && (
         <div className="flex sm:hidden   overflow-hidden animate-spread justify-center items-center ">
@@ -57,8 +59,6 @@ const Navbar = () => {
           </ul>
         </div>
       )} */}
-
-      
     </header>
   );
 };

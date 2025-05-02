@@ -16,11 +16,28 @@ const navItems: NavItem[] = [
   { id: "skills", name: "Skills", slug: "#skills" },
   { id: "contactus", name: "Contact-us", slug: "#contactus" },
 ];
-
 const Navbar: FC = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const { activeSection, setActiveSection } = useNavContext();
   console.log("activeSection", activeSection);
+
+  const handleNavItemClick = (item: NavItem, e: React.MouseEvent) => {
+    e.preventDefault();
+    const target = document.getElementById(item.id);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      const headerHeight = document.querySelector("header")?.offsetHeight || 0;
+      console.log(headerHeight);
+
+      // Scroll to the target section, considering the header height as an offset
+      window.scrollTo({
+        top: target.offsetTop - headerHeight,
+        behavior: "smooth",
+      });
+
+      setActiveSection(item.id);
+    }
+  };
 
   return (
     <header className="py-3 sm:py-5 sticky top-0 bg-black z-40">
@@ -33,27 +50,17 @@ const Navbar: FC = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <ul
-          className={`hidden sm:flex justify-center items-center text-xl gap-10 `}
-        >
+        <ul className="hidden sm:flex justify-center items-center text-xl gap-10 ">
           {navItems.map((item) => (
             <li key={item.name}>
               <a
-                onClick={(e) => {
-                  e.preventDefault();
-                  const target = document.getElementById(item.id);
-                  if (target) {
-                    target.scrollIntoView({ behavior: "smooth" });
-                    setActiveSection(item.id);
-                  }
-                }}
+                onClick={(e) => handleNavItemClick(item, e)}
                 href={item.slug}
                 className={`${
                   activeSection == item?.id
                     ? "text-white transition-all scale-105"
                     : "text-transparent bg-clip-text bg-linear2"
                 }`}
-                // className="hover:scale-105 transition-all duration-100"
               >
                 {item.name}
               </a>
@@ -90,17 +97,10 @@ const Navbar: FC = () => {
             {navItems.map((item) => (
               <li key={item.name} onClick={() => setIsNavOpen(false)}>
                 <a
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const target = document.getElementById(item.id);
-                    if (target) {
-                      target.scrollIntoView({ behavior: "smooth" });
-                      setActiveSection(item.id);
-                    }
-                  }}
+                  onClick={(e) => handleNavItemClick(item, e)}
                   href={item.slug}
                   className={`hover:scale-105 transition ${
-                    activeSection == item?.slug
+                    activeSection == item?.id
                       ? "text-white transition-all scale-105"
                       : "text-transparent bg-clip-text bg-linear2"
                   }`}

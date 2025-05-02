@@ -68,7 +68,7 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
         className={`absolute left-3 top-2 text-base text-gray-400 transition-all duration-300 
         ${
           isFocus || isActive
-            ? "-top-3 text-sm text-purple-400"
+            ? "-top-[10px] text-sm text-purple-400"
             : "top-3 text-base text-gray-white"
         }`}
       >

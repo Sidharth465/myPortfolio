@@ -5,7 +5,7 @@ import { Strings } from "@utils/constants";
 const Footer = () => {
   return (
     <div className="flex flex-1  flex-col items-center py-8 px-6 gap-3 justify-end ">
-      <h2 className="bg-linear2 text-transparent bg-clip-text font-semibold text-3xl">
+      <h2 className="bg-linear2 text-transparent bg-clip-text font-semibold text-xl sm:text-3xl">
         {Strings.personalDetail?.name}
       </h2>
       <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 items-center">

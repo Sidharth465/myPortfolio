@@ -86,7 +86,7 @@ const SkillsCard: FC = () => {
     <AnimatedSection id="skills">
       <Page
         showBottomDivider={false}
-        className="flex flex-col items-center  w-full h-dvh px-4"
+        className="flex flex-col items-center  w-full h-full px-4"
       >
         <div className="mb-4 flex text-center flex-col gap-2">
           <h1 className="text-3xl sm:text-4xl text-transparent bg-linear2 font-bold bg-clip-text">

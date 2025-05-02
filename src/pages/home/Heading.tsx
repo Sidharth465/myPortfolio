@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Strings } from "@utils/constants";
 
 const Heading = () => {
-  const words = ["Sidharth Verma.", "Full-Stack Developer."];
+  const words = ["Siddharth Verma.", "Full-Stack Developer."];
   const [displayedText, setDisplayedText] = useState("");
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isErasing, setIsErasing] = useState(false);

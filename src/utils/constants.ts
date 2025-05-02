@@ -16,6 +16,7 @@ import {
   ReduxIcon,
   GrocizyIcon,
   TapHealth,
+  XotivLog,
 } from "@assets/index";
 
 export const Strings: StringsType = {
@@ -24,16 +25,27 @@ export const Strings: StringsType = {
   experieceData: [
     {
       id: 0,
+      title: "SDE-1",
+      Company: "Xotiv Technologies",
+      location: "Noida, U.P, India",
+      timeSpan: "May 2025 - Current ",
+      duration: "",
+      type: "On-Site",
+      image: XotivLog,
+    },
+
+    {
+      id: 1,
       title: "SDE Intern",
       Company: "Tab Health Pvt. Ltd.",
       location: "Gurugram, Haryana, India",
-      timeSpan: "Jan 2025 - Current ",
+      timeSpan: "Jan 2025 - May 2025 ",
       duration: "",
       type: "On-Site",
       image: TapHealth,
     },
     {
-      id: 1,
+      id: 2,
       title: "Associate Software Developer",
       Company: "Richaco Exports Pvt. Ltd.",
       location: "Gurugram, Haryana, India",
@@ -43,7 +55,7 @@ export const Strings: StringsType = {
       image: richaco,
     },
     {
-      id: 2,
+      id: 3,
       title: "React Native Developer",
       Company: "RytClick Pvt. Ltd.",
       location: "Faridabad, Haryana, India",
@@ -54,7 +66,7 @@ export const Strings: StringsType = {
     },
 
     {
-      id: 3,
+      id: 4,
       title: "React Native Intern",
       Company: "BetterWay",
       location: "Gurugram, Haryana, India",
@@ -64,7 +76,7 @@ export const Strings: StringsType = {
       image: betterway,
     },
     {
-      id: 4,
+      id: 5,
       title: "Frontend Developer Intern",
       Company: "Avsars Technologies Pvt. Ltd.",
       location: "Uttar Pradesh, India",
@@ -75,7 +87,7 @@ export const Strings: StringsType = {
     },
   ],
   personalDetail: {
-    name: "Siddharth verma",
+    name: "Siddharth Verma",
     contact: "8744098062",
     mailId: "siddharthverma465@gmail.com",
     address: "Delhi",

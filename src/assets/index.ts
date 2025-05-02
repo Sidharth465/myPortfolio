@@ -1,4 +1,4 @@
-import JsIcon from "@assets/icons/js.png";
+import JsIcon from "@assets/icons/js.svg";
 import AndroidStudio from "@assets/icons/Android Studio.svg";
 import CssIcon from "@assets/icons/CSS3.svg";
 import HtmlIcon from "@assets/icons/HTML5.svg";
@@ -21,6 +21,11 @@ import betterway from "@assets/images/betterway.png";
 import GrocizyIcon from "@assets/images/grocizyIcon.png";
 import TapHealth from "@assets/images/taphealth_logo.jpeg";
 import TapHealthLogo from "@assets/images/logo.png";
+import XotivLog from "@assets/images/xotivIcon.jpeg";
+import AwsIcon from "@assets/icons/AWS.svg";
+import FirebaseIcon from "@assets/icons/Firebase.svg";
+import VscodoeIcon from "@assets/icons/vscodeIcon.svg";
+import PostmanIcon from "@assets/icons/PostmanIcon.svg";
 
 export {
   JsIcon,
@@ -46,4 +51,9 @@ export {
   TailwindCssIcon,
   TapHealth,
   TapHealthLogo,
+  XotivLog,
+  AwsIcon,
+  FirebaseIcon,
+  PostmanIcon,
+  VscodoeIcon,
 };

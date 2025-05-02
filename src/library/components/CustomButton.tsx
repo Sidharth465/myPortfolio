@@ -20,7 +20,7 @@ const CustomButton = ({
   return (
     <div
       style={{ pointerEvents: processing ? "none" : "auto" }}
-      className={`group  relative flex items-center w-[150px] h-[40px] bg-linear2 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 ${className}`}
+      className={`group  relative flex items-center w-[150px] h-[40px] sm:h-[50px] sm:w-[250px] bg-linear2 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 ${className}`}
       onClick={onClick}
     >
       {/* Icon Section */}
@@ -37,7 +37,7 @@ const CustomButton = ({
           )}
 
           {/* Title Section */}
-          <span className="flex pl-[25px] w-full items-center justify-center  text-background font-semibold transition-all duration-300 ease-in-out group-hover:text-transparent">
+          <span className="flex pl-[25px] w-full items-center justify-center sm:text-xl text-white font-semibold transition-all duration-300 ease-in-out group-hover:text-transparent">
             {title}
           </span>
         </>

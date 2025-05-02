@@ -10,19 +10,23 @@ export default {
         Poppins: ["Poppins", "sans-serif"], // Use Poppins as the default sans-serif font
       },
       colors: {
-        primary:"#D1FF1C",
-        secondary:"#A3C615",
-        
+        // primary: "#D1FF1C", //greenish
+        primary: "#8b5cf6",
+        // secondary: "#A3C615", //yellowish
+        secondary: "#ec4899",
+
         background: "#000000",
 
         neutralgray: "#A6A6A6",
 
-        cardBg:"#3D3A3A"
+        cardBg: "#3D3A3A",
       },
       backgroundImage: {
         linear:
           "linear-gradient(90deg, #D1FF1C 0%, #DBFF4E 37%, #EFFFB3 75%, #F4FFCC 100%)",
-        linear2: "linear-gradient(45deg, #E0FF67 0%, #EAFF9A 100%)",
+
+        // linear2: "linear-gradient(45deg, #E0FF67 0%, #EAFF9A 100%)", //yellowish
+        linear2: "linear-gradient(to right, #8b5cf6, #ec4899)", //purple pink
       },
       keyframes: {
         typing: {

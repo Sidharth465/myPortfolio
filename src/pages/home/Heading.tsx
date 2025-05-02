@@ -7,7 +7,6 @@ const Heading = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isErasing, setIsErasing] = useState(false);
 
-  // Typing effect
   useEffect(() => {
     const currentWord = words[currentWordIndex];
     let timeout: ReturnType<typeof setTimeout>;
@@ -17,44 +16,40 @@ const Heading = () => {
         setDisplayedText((prev) => prev.slice(0, -1));
         if (displayedText === "") {
           setIsErasing(false);
-          setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+          setCurrentWordIndex((prev) => (prev + 1) % words.length);
         }
-      }, 200);
+      }, 100);
     } else {
       timeout = setTimeout(() => {
         setDisplayedText((prev) => currentWord.slice(0, prev.length + 1));
         if (displayedText === currentWord) {
-          setTimeout(() => setIsErasing(true), 1000); // Pause before erasing
+          setTimeout(() => setIsErasing(true), 1200);
         }
-      }, 200);
+      }, 150);
     }
+
     return () => clearTimeout(timeout);
   }, [displayedText, isErasing, currentWordIndex]);
 
   return (
-    <div className="flex flex-col w-full h-full justify-center items-center sm:items-start  ">
-      {/* Welcome Text */}
-      <h2 className=" bg-clip-text bg-linear text-transparent  mt-5  sm:mt-0 text-3xl  text-center">
-        Welcome to my Portfolio
-      </h2>
-
+    <div className="flex flex-col w-full h-full justify-center items-center sm:items-start px-4 md:px-8 lg:px-12 py-8">
       {/* Typing Effect */}
-      <div className="flex flex-col sm:flex-row gap-2 w-full justify-center sm:justify-start mt-5 items-center min-h-[35px]">
-        <span className="text-white  text-xl sm:text-xl md:text-2xl font-bold font-poppins">
+      <div className="flex flex-col sm:flex-row gap-2 w-full justify-center sm:justify-start mt-5 items-center min-h-[40px]">
+        <span className="text-white text-lg sm:text-3xl  font-semibold font-poppins">
           Hi! I'm{" "}
         </span>
         <div className="flex items-center">
-          <span className="text-borderbg text-xl  bg-clip-text bg-linear text-transparent sm:text-xl md:text-2xl font-bold font-poppins">
+          <span className="text-borderbg text-lg sm:text-3xl  font-bold font-poppins bg-clip-text bg-linear2 text-transparent">
             {displayedText}
           </span>
-          <span className="border-r-2 border-neutral-500 text-xl animate-blink ">
+          <span className="border-r-2 border-neutral-500 text-xl animate-blink ml-1">
             |
           </span>
         </div>
       </div>
 
       {/* Description */}
-      <p className="max-w-[500px] text-white opacity-80 text-base font-light font-poppins sm:text-start text-center mt-4">
+      <p className="max-w-[600px] text-white opacity-80 text-sm sm:text-xl font-light font-poppins sm:text-start text-left mt-4">
         {Strings?.HomePara}
       </p>
     </div>

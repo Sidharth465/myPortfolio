@@ -5,6 +5,9 @@
 body {
   scroll-behavior: smooth;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 .animated-section {
   opacity: 0;
@@ -16,6 +19,10 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+.animated-section.fade-out {
+  opacity: 0;
+  transform: translateY(0);
+}
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
@@ -25,6 +32,97 @@ body {
 @keyframes move {
   100% {
     transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+.custom-shape-divider-top-1746113484 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1746113562 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1746114234 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1746114234 svg {
+  position: relative;
+  display: block;
+  width: calc(121% + 1.3px);
+  height: 86px;
+}
+
+.custom-shape-divider-top-1746114234 .shape-fill {
+  fill: #8b5cf6;
+  opacity: 0.2;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-top-1746114234 svg {
+    width: calc(121% + 1.3px);
+    height: 70px;
+  }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-top-1746114234 svg {
+    width: calc(136% + 1.3px);
+    height: 42px;
+  }
+}
+.custom-shape-divider-bottom-1746114352 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1746114352 svg {
+  position: relative;
+  display: block;
+  width: calc(121% + 1.3px);
+  height: 63px;
+}
+
+.custom-shape-divider-bottom-1746114352 .shape-fill {
+  fill: #8b5cf6;
+  opacity: 0.2;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-bottom-1746114352 svg {
+    width: calc(121% + 1.3px);
+    height: 56px;
+  }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1746114352 svg {
+    width: calc(136% + 1.3px);
+    height: 49px;
   }
 }
 

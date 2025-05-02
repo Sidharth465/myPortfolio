@@ -1,12 +1,16 @@
 import Meteor from "@library/components/Meteor";
+import ContactUs from "@pages/contact-us";
 import Experience from "@pages/experience";
 import Home from "@pages/home";
-import { FC } from "react";
+import SkillsCard from "@pages/skills/Skills";
+import { FC, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "./library/components/Navbar";
+import { NavProvider } from "@library/context/NavContext";
 
 const App: FC = () => {
   const isMobile = window.innerWidth < 640;
+
   return (
     <>
       <Helmet>
@@ -31,15 +35,17 @@ const App: FC = () => {
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
-      <div className="h-[100vh] w-[100vw]   bg-background  px-5 sm:px-10">
-        <Meteor />
-
-        <Navbar />
-        <Home isMobile={isMobile} />
-        <Experience isMobile={isMobile} />
-        {/* <SkillsCard /> */}
-        {/* <ContactUs /> */}
-      </div>
+      <NavProvider>
+        <div className="bg-background   ">
+          <Meteor />
+          <Navbar />
+          <Home isMobile={isMobile} />
+          <Experience isMobile={isMobile} />
+          <SkillsCard />
+          <ContactUs />
+          {/* <Footer /> */}
+        </div>
+      </NavProvider>
     </>
   );
 };

@@ -109,7 +109,7 @@ const ContactUs: FC = () => {
       <Page className="flex flex-col justify-between">
         <section
           id="contact"
-          className="w-full bg-black text-white py-10 px-5 sm:px-10 justify-between"
+          className="w-full  text-white py-10 px-5 sm:px-10 justify-between"
         >
           <div className="max-w-4xl mx-auto flex flex-col items-center justify-center">
             {/* Heading */}

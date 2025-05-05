@@ -17,17 +17,18 @@ const Home: FC<{
   const downloadResume = async () => {
     setProcessing(true);
     try {
-      fetchResume("/resume");
+      await fetchResume("/resume");
     } catch (error) {
       alert(`Error Downloading Resume ${error} `);
     } finally {
       setProcessing(false);
     }
   };
+
   return (
     <AnimatedSection id="home">
-      <Page>
-        <div className="flex h-full flex-col   ">
+      <Page className="min-h-screen">
+        <div className="flex h-full flex-col  ">
           <div className=" flex   flex-col sm:flex-row justify-center items-center ">
             <div className="order-2 sm:order-1">
               <Heading />
@@ -37,7 +38,7 @@ const Home: FC<{
             </div>
           </div>
           <div className=" flex h-full flex-col sm:flex-row justify-center items-center  ">
-            <div className="order-2 sm:order-1 mt-5 sm:mt-0">
+            <div className="order-2 sm:order-1 mt-5 sm:mt-0 z-50">
               <CustomButton
                 processing={processing}
                 onClick={downloadResume}

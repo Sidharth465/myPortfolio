@@ -18,7 +18,7 @@ const CustomButton = ({
 }: ButtonProps) => {
   console.log("processing", processing);
   return (
-    <div
+    <button
       style={{ pointerEvents: processing ? "none" : "auto" }}
       className={`group  relative flex items-center w-[150px] h-[40px] sm:h-[50px] sm:w-[250px] bg-linear2 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 ${className}`}
       onClick={onClick}
@@ -42,7 +42,7 @@ const CustomButton = ({
           </span>
         </>
       )}
-    </div>
+    </button>
   );
 };
 

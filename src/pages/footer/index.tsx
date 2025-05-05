@@ -27,8 +27,9 @@ const Footer = () => {
         <ContactImageurlBox image={Instagram} url={Strings.instagramLink} />
       </div>
       <div className="pt-4  text-white justify-center items-center">
-        <h4 className="text-lg text-center">
-          © Copyright 2025 {Strings.personalDetail?.name}. All Rights Reserved.
+        <h4 className="text-sm sm:text-lg text-center">
+          © {new Date().getFullYear()} {Strings.personalDetail?.name}. All
+          rights reserved.
         </h4>
       </div>
     </div>

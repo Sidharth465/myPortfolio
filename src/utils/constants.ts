@@ -39,31 +39,12 @@ export const Strings: StringsType = {
       title: "SDE Intern",
       Company: "Tab Health Pvt. Ltd.",
       location: "Gurugram, Haryana, India",
-      timeSpan: "Jan 2025 - May 2025 ",
+      timeSpan: "Nov 2024 - Apr 2025 ",
       duration: "",
       type: "On-Site",
       image: TapHealth,
     },
-    {
-      id: 2,
-      title: "Associate Software Developer",
-      Company: "Richaco Exports Pvt. Ltd.",
-      location: "Gurugram, Haryana, India",
-      timeSpan: "Dec 2024 - Jan 2025 ",
-      duration: "2 months",
-      type: "On-Site",
-      image: richaco,
-    },
-    {
-      id: 3,
-      title: "React Native Developer",
-      Company: "RytClick Pvt. Ltd.",
-      location: "Faridabad, Haryana, India",
-      timeSpan: "Aug 2024 - Oct 2024",
-      duration: "3 months",
-      type: "On-Site",
-      image: rytclick,
-    },
+    
 
     {
       id: 4,

@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 const Page = ({
   children,
-  className = "justify-center items-center h-dvh",
+  className = "min-h-screen flex items-center justify-center",
   showTopDivider = true,
   showBottomDivider = true,
 }: {
@@ -31,7 +31,9 @@ const Page = ({
       )}
 
       {/* Page content */}
-      <div className={`px-2 pt-20  w-full ${className}`}>{children}</div>
+      <div className={`relative z-10 ${className}`}>{children}</div>
+
+      {/* SVG shape at the bottom */}
       {showBottomDivider && (
         <div className="custom-shape-divider-bottom-1746114352">
           <svg

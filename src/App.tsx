@@ -2,14 +2,30 @@ import Meteor from "@library/components/Meteor";
 import ContactUs from "@pages/contact-us";
 import Experience from "@pages/experience";
 import Home from "@pages/home";
+import Projects from "@pages/projects";
 import SkillsCard from "@pages/skills/Skills";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "./library/components/Navbar";
 import { NavProvider } from "@library/context/NavContext";
 
 const App: FC = () => {
-  const isMobile = window.innerWidth < 640;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    // Check on mount
+    checkMobile();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <>
@@ -36,12 +52,13 @@ const App: FC = () => {
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <NavProvider>
-        <div className="bg-background   ">
+        <div className="bg-background">
           <Meteor />
           <Navbar />
           <Home isMobile={isMobile} />
           <Experience isMobile={isMobile} />
           <SkillsCard />
+          <Projects />
           <ContactUs />
           {/* <Footer /> */}
         </div>

@@ -1,7 +1,7 @@
 // write a post and get api funtion using fetch
 
-export const postContactData = async (endpoint: string, data: any) => {
-  const url = `${import.meta.env.VITE_BASE_URL}${endpoint}`;
+export const postContactData = async (data: Record<string, unknown>) => {
+  const url = `https://api.web3forms.com/submit`;
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -10,7 +10,7 @@ export const postContactData = async (endpoint: string, data: any) => {
     },
     body: JSON.stringify(data),
   });
-  let result = await response.json();
+  const result = await response.json();
 
   return result;
 };

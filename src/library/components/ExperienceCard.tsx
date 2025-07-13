@@ -2,95 +2,182 @@ import { FC } from "react";
 import AnimatedSection from "./AnimatedSection";
 
 const ExperienceCard: FC<{
-  item: Experience;
+  work: Work;
   isLast: boolean;
   index: number;
   isMobile: boolean;
-}> = ({ item, index, isMobile, isLast }) => {
+  isExpanded: boolean;
+  onToggle: () => void;
+}> = ({ work, index, isMobile, isLast, isExpanded, onToggle }) => {
+  const isEven = index % 2 === 0;
+
   return (
-    <AnimatedSection key={item?.id}>
-      <div className="flex flex-1  lg:mx-[15%] flex-col sm:flex-row  gap-16">
+    <AnimatedSection key={work?.company}>
+      <div
+        className={`${
+          isMobile ? "w-full" : "flex items-center gap-8 lg:gap-16"
+        }`}
+      >
+        {/* Content - Full width on mobile, flex on desktop */}
         <div
-          className={`${
-            index % 2 == 0 ? "order-1" : "order-3"
-          }  flex-1 rounded-lg p-1 relative items-center flex  bg-linear2 mx-5 md:mx-0`}
+          className={`${isMobile ? "w-full" : "flex-1"} ${
+            isMobile ? "" : isEven ? "order-1" : "order-3"
+          }`}
         >
-          <div className="flex w-full    p-2  flex-row  bg-black rounded-md shadow-lg items-center  justify-start    backdrop-opacity-10 backdrop-blur-md  ">
-            <div
-              key={item?.id}
-              className="  flex items-center justify-start py-1 w-[130px] bg-background"
-            >
-              <img
-                src={item?.image}
-                alt="img"
-                className="bg-background h-[90px] sm:h-[120px] w-[90px] sm:w-[120px] object-contain rounded-lg"
-              />
-            </div>
-            <div className="flex flex-col  sm:text-sm rounded-br-full  text-[12px] ">
-              <h3 className="font-Poppins bg-linear2 text-transparent bg-clip-text text-neutralgray text-base font-semibold">
-                {item?.Company}
-              </h3>
-              <h3 className="font-Poppins text-white opacity-80 text-sm font-light">
-                {item?.title}
-              </h3>
-              <h3 className="font-Poppins text-white opacity-80 text-sm font-light">
-                {item?.location}
-              </h3>
-              <h3 className="font-Poppins text-white opacity-80 text-sm font-light">
-                {item?.timeSpan}
-              </h3>
-              <h3 className="font-Poppins text-white opacity-80 text-sm font-light">
-                {item?.type}
-              </h3>
+          <div className="group relative">
+            {/* Card Container */}
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/50 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20">
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <div className="relative p-6 sm:p-8">
+                {/* Header */}
+                <div className="flex items-start gap-4 mb-6">
+                  {/* Company Logo */}
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center p-2">
+                      <img
+                        src={work?.image}
+                        alt={work?.company}
+                        className="w-full h-full object-contain rounded-lg"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Company Info */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-xl sm:text-2xl font-bold bg-linear2 bg-clip-text text-transparent mb-1">
+                      {work?.company}
+                    </h3>
+                    <p className="text-lg sm:text-xl text-white font-semibold mb-2">
+                      {work?.position}
+                    </p>
+                    <div className="flex flex-wrap gap-2 text-sm text-gray-400">
+                      <span className="flex items-center gap-1">
+                        <svg
+                          className="w-4 h-4"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        {work?.location}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <svg
+                          className="w-4 h-4"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        {work?.duration}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Expand/Collapse Button */}
+                  <button
+                    onClick={onToggle}
+                    className="flex-shrink-0 p-2 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 hover:border-purple-500/50 transition-all duration-300 group-hover:from-purple-500/30 group-hover:to-pink-500/30"
+                  >
+                    <svg
+                      className={`w-5 h-5 text-purple-300 transition-transform duration-300 ${
+                        isExpanded ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Tech Stack */}
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-gray-300 mb-3">
+                    Tech Stack
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {work?.tech_stack?.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 text-xs font-medium bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-300 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Projects Section */}
+                {isExpanded && (
+                  <div className="mt-6 pt-6 border-t border-gray-700/50">
+                    <h4 className="text-lg font-semibold text-white mb-4">
+                      Key Projects
+                    </h4>
+                    <div className="space-y-4">
+                      {work?.projects?.map((project, projectIndex) => (
+                        <div
+                          key={projectIndex}
+                          className="p-4 rounded-xl bg-gradient-to-br from-gray-800/30 to-gray-700/30 border border-gray-600/30"
+                        >
+                          <h5 className="text-base font-semibold text-purple-300 mb-2">
+                            {project.name}
+                          </h5>
+                          <p className="text-sm text-gray-400 leading-relaxed">
+                            {project.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-          {!isMobile && (
-            <div
-              className={`absolute  ${
-                index % 2 == 0
-                  ? "-right-4 border-l-secondary  border-l-[17px]"
-                  : "-left-4 border-r-primary  border-r-[17px]"
-              }  top-[50%] -translate-y-[50%] w-0 h-0 
-                    border-t-[10px] border-t-transparent
-                    border-b-[10px] border-b-transparent`}
-            />
-          )}
         </div>
 
+        {/* Timeline Node for Desktop Only */}
         {!isMobile && (
-          <div className=" flex  order-2   flex-col  relative items-center">
-            <div className="h-full w-[10px]  bg-linear2" />
-            <div className="h-[80px] absolute top-[50%] bottom-[50%]  -translate-y-[50%] w-[80px] flex items-center justify-center bg-linear2 rounded-full">
-              <div className="h-[60px] flex shadow-lg w-[60px] rounded-full bg-white justify-center items-center">
-                <img
-                  style={{ borderRadius: "100%" }}
-                  src={item?.image}
-                  alt="img"
-                  className="h-[50px] w-[50px]  object-contain rounded-full"
-                />
+          <div className="flex-shrink-0 order-2 relative">
+            {/* Timeline Node */}
+            <div className="relative z-10">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg border-4 border-black">
+                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                  <img
+                    src={work?.image}
+                    alt={work?.company}
+                    className="w-6 h-6 object-contain"
+                  />
+                </div>
               </div>
 
-              {/* <div className='absolute -left-1 rotate-[45deg] h-[15px] shadow-lg w-[15px]  bg-linear' />
-    <div className='absolute -right-1 rotate-[45deg] h-[15px] shadow-lg w-[15px]  bg-linear' /> */}
+              {/* Connecting Lines */}
+              {!isLast && (
+                <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-1 h-16 bg-gradient-to-b from-purple-500 to-pink-500"></div>
+              )}
             </div>
-            <div className="h-full w-[10px]  bg-linear2" />
           </div>
         )}
+
+        {/* Empty Space for Desktop Layout */}
         {!isMobile && (
-          <div
-            className={`sm:flex hidden ${
-              index % 2 == 0 ? "order-3" : "order-1"
-            }  flex-1 rounded-lg p-1    `}
-          >
-            <div className="flex     p-2  flex-row  rounded-md shadow-lg items-center  justify-start    backdrop-opacity-10 backdrop-blur-md  ">
-              <div
-                style={{ height: 130, width: 130 }}
-                key={item?.id}
-                className="  flex items-center justify-center"
-              ></div>
-              <div className="flex flex-col  sm:text-sm rounded-br-full  text-[12px] "></div>
-            </div>
-          </div>
+          <div className={`flex-1 ${isEven ? "order-3" : "order-1"}`}></div>
         )}
       </div>
     </AnimatedSection>
@@ -98,10 +185,3 @@ const ExperienceCard: FC<{
 };
 
 export default ExperienceCard;
-
-// to make border gradient
-// style={{
-//     border: "4px solid transparent",
-//     borderImage: "linear-gradient(90deg, #D1FF1C 0%, #DBFF4E 37%, #EFFFB3 75%, #F4FFCC 100%) 1",
-//     borderRadius:500
-//   }} className='border  rounded-full p-1   '

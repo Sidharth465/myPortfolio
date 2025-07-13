@@ -2,6 +2,7 @@ import {
   AndroidStudio,
   AwsIcon,
   CssIcon,
+  CursorIcon,
   ExpressIcon,
   FirebaseIcon,
   Git,
@@ -46,36 +47,46 @@ const otherSkills = [
   { name: "Android Studio", icon: AndroidStudio },
   { name: "Postman", icon: PostmanIcon },
   { name: "VS Code", icon: VscodoeIcon },
+  { name: "Cursor", icon: CursorIcon },
 ];
 
 const SkillsCard: FC = () => {
-  const renderSkillGroup = (
-    title: string,
-    skills: typeof frontendSkills,
-    className: string = "w-full md:w-[48%] lg:w-[30%]"
-  ) => (
-    <div className={`mb-2 ${className}`}>
-      <div className="rounded-lg p-[2px] bg-linear2">
-        <div className="flex flex-col h-full p-4 bg-black rounded-md shadow-lg items-center justify-start backdrop-opacity-10 backdrop-blur-md">
-          <h2 className="text-xl text-white dark:text-gray-300 mb-4 text-center">
-            {title}
-          </h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {skills.map((skill) => (
-              <div
-                key={skill.name}
-                className="flex items-center gap-3 p-2 border rounded-lg min-w-[130px] justify-center"
-              >
-                <img
-                  src={skill.icon}
-                  alt={skill.name}
-                  className="w-5 h-5 md:w-7 md:h-7"
-                />
-                <p className="text-sm  text-white dark:text-gray-200 text-center">
-                  {skill.name}
-                </p>
-              </div>
-            ))}
+  const renderSkillGroup = (title: string, skills: typeof frontendSkills) => (
+    <div className="w-full lg:w-[32%] mb-8">
+      <div className="group relative h-full">
+        {/* Card Container */}
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/50 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 h-full">
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+          <div className="relative p-6 h-full">
+            {/* Header */}
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold bg-linear2 bg-clip-text text-transparent mb-2">
+                {title}
+              </h2>
+              <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+            </div>
+
+            {/* Skills Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {skills.map((skill) => (
+                <div key={skill.name} className="group/skill">
+                  <div className="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-700/50 border border-gray-600/30 hover:border-purple-500/50 transition-all duration-300 hover:bg-gradient-to-br hover:from-purple-500/10 hover:to-pink-500/10">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center p-1 flex-shrink-0">
+                      <img
+                        src={skill.icon}
+                        alt={skill.name}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-sm sm:text-base font-medium text-white group-hover/skill:text-purple-300 transition-colors truncate">
+                      {skill.name}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -84,24 +95,34 @@ const SkillsCard: FC = () => {
 
   return (
     <AnimatedSection id="skills">
-      <Page
-        showBottomDivider={false}
-        className="flex flex-col items-center  w-full h-full px-4"
-      >
-        <div className="mb-4 flex text-center flex-col gap-2">
-          <h1 className="text-3xl sm:text-4xl text-transparent bg-linear2 font-bold bg-clip-text">
-            Skills
-          </h1>
-          <h1 className="text-sm sm:text-lg text-gray-400">
-            Here are some of my technical skills I’ve been working with.
-          </h1>
-        </div>
+      <Page showBottomDivider={false} className="min-h-screen py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header Section */}
+          <div className="text-center mb-16 space-y-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-linear2 bg-clip-text text-transparent">
+              Skills & Expertise
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+              Here are the technologies and tools I've been working with to
+              create amazing digital experiences
+            </p>
+          </div>
 
-        <div className="flex flex-1 flex-col items-center justify-center">
-          <div className="flex  flex-wrap gap-6 px-2 justify-center items-end w-full max-w-[1200px]">
+          {/* Skills Grid */}
+          <div className="flex flex-col lg:flex-row gap-8 justify-center">
             {renderSkillGroup("Frontend", frontendSkills)}
             {renderSkillGroup("Backend", backendSkills)}
-            {renderSkillGroup("Others", otherSkills)}
+            {renderSkillGroup("Tools & Others", otherSkills)}
+          </div>
+
+          {/* Additional Info */}
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30">
+              <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
+              <span className="text-sm text-gray-300">
+                Continuously learning and exploring new technologies
+              </span>
+            </div>
           </div>
         </div>
       </Page>

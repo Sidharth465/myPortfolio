@@ -37,7 +37,7 @@ export const Strings: StringsType = {
     {
       id: 1,
       title: "SDE Intern",
-      Company: "Tab Health Pvt. Ltd.",
+      Company: "Tap Health Pvt. Ltd.",
       location: "Gurugram, Haryana, India",
       timeSpan: "Nov 2024 - Apr 2025 ",
       duration: "",

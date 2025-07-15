@@ -128,7 +128,7 @@ export const Strings: StringsType = {
       ],
     },
     {
-      company: "Tab Health Pvt. Ltd.",
+      company: "Tap Health Pvt. Ltd.",
       location: "Gurugram, Haryana, India",
       position: "SDE Intern",
       duration: "Nov 2024 - Apr 2025",

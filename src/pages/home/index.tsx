@@ -29,7 +29,7 @@ const Home: FC<{
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12 lg:gap-16 max-w-7xl mx-auto">
             {/* Left Content */}
-            <div className="flex-1 text-center lg:text-left w-full lg:w-auto">
+            <div className="flex-1 text-center lg:text-left w-full lg:w-auto ">
               <Heading />
 
               {/* CTA Button */}
@@ -67,7 +67,7 @@ const Home: FC<{
             </div>
 
             {/* Right Content - Avatar */}
-            <div className="flex-1 flex justify-center lg:justify-end w-full lg:w-auto">
+            <div className=" flex justify-center lg:justify-end w-full lg:w-auto">
               <div className="relative">
                 <AnimatedAvatar isMobile={isMobile} />
 

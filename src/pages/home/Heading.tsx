@@ -32,7 +32,7 @@ const Heading = () => {
   }, [displayedText, isErasing, currentWordIndex]);
 
   return (
-    <div className="space-y-8 lg:space-y-10">
+    <div className="space-y-8 lg:space-y-10  ">
       {/* Greeting and Name Section */}
       <div className="space-y-4">
         <h2 className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-medium">
@@ -40,7 +40,7 @@ const Heading = () => {
         </h2>
 
         {/* Name with typing effect - Fixed height to prevent layout shifts */}
-        <div className="flex  items-center gap-2 h-16 sm:h-20 lg:h-28">
+        <div className="flex  items-center gap-2 h-16 sm:h-20 lg:h-28 ">
           <h1 className="text-[2rem] sm:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] font-bold bg-linear2 bg-clip-text text-transparent leading-none whitespace-nowrap">
             {displayedText}
           </h1>
@@ -49,8 +49,8 @@ const Heading = () => {
       </div>
 
       {/* Description - Fixed spacing */}
-      <div className="max-w-2xl">
-        <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed">
+      <div className="max-w-2xl ">
+        <p className="text-base text-left sm:text-lg lg:text-xl text-gray-300 leading-relaxed">
           {Strings?.HomePara}
         </p>
       </div>

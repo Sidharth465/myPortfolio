@@ -20,7 +20,9 @@ import {
 } from "@assets/index";
 
 export const Strings: StringsType = {
-  HomePara: `As a BTech CSE graduate and a versatile full-stack developer, I specialize in crafting dynamic web experiences with React and building seamless mobile applications with React Native for both iOS and Android. With expertise in Node.js, Express, and PostgreSQL, I develop robust and scalable backend solutions, ensuring high-performance applications with secure and efficient data management.`,
+  HomePara: `I’m Siddharth Verma, a full-stack developer with 2+ years of experience building scalable web and mobile applications. I specialize in React, React Native, Node.js, and PostgreSQL, with hands-on experience from internships and roles at Xotiv Technologies, Tab Health, BetterWay, and more. I’ve developed 10+ projects across healthcare, inventory, and admin management—delivering high-performance, user-friendly solutions. Always eager to learn and build, I turn ideas into impactful digital products.
+
+`,
 
   experieceData: [
     {

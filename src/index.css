@@ -61,6 +61,19 @@
   transform: translateY(0);
 }
 
+/* Mobile-specific override for projects section */
+@media (max-width: 767px) {
+  #projects.animated-section {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  #projects.animated-section.fade-out {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
   /* Chrome, Safari */

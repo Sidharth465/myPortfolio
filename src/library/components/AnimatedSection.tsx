@@ -12,42 +12,54 @@ const AnimatedSection = ({
   className?: string;
 }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const { setActiveSection } = useNavContext();
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
           setIsVisible(true);
-          console.log("active section", id);
-          setActiveSection((prev) => (id === undefined ? prev : id));
-
-          // Stop observing once the element is visible by sid
-          // if (sectionRef.current) {
-          //   observer.unobserve(sectionRef.current);
-          // }
+          if (id) setActiveSection(id);
         } else {
-          setIsVisible(false);
+          if (!isMobile) setIsVisible(false);
         }
       },
-      { threshold: 0.3 } // Adjust threshold for more control
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -50px 0px",
+      }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    observer.observe(sectionRef.current);
 
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
-  }, []);
+  }, [id, setActiveSection, isMobile]);
 
   return (
     <div
       id={id}
       ref={sectionRef}
-      className={`w-full  animated-section ${
+      className={`w-full animated-section ${
         isVisible ? "fade-in" : "fade-out"
       } ${className}`}
     >

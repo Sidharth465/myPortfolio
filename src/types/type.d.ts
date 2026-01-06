@@ -11,6 +11,7 @@ interface Project {
 }
 
 interface Work {
+  id: number;
   company: string;
   location: string;
   position: string;

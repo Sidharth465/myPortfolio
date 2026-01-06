@@ -17,6 +17,7 @@ import {
   XotivLog,
   richaco,
   rytclick,
+  HealthSetGo,
 } from "@assets/index";
 
 export const Strings: StringsType = {
@@ -27,17 +28,27 @@ export const Strings: StringsType = {
   experieceData: [
     {
       id: 0,
-      title: "SDE-1",
+      title: "SDE",
+      Company: "Healthsetgo Services Private Limited",
+      location: "Gurugram, Haryana, India",
+      timeSpan: "Aug 2025 - Current ",
+      duration: "",
+      type: "On-Site",
+      image: HealthSetGo,
+    },
+    {
+      id: 1,
+      title: "SDE",
       Company: "Xotiv Technologies",
       location: "Noida, U.P, India",
-      timeSpan: "May 2025 - Current ",
+      timeSpan: "May 2025 - Aug 2025 ",
       duration: "",
       type: "On-Site",
       image: XotivLog,
     },
 
     {
-      id: 1,
+      id: 2,
       title: "SDE Intern",
       Company: "Tap Health Pvt. Ltd.",
       location: "Gurugram, Haryana, India",
@@ -48,7 +59,7 @@ export const Strings: StringsType = {
     },
 
     {
-      id: 4,
+      id: 3,
       title: "React Native Intern",
       Company: "BetterWay",
       location: "Gurugram, Haryana, India",
@@ -58,7 +69,7 @@ export const Strings: StringsType = {
       image: betterway,
     },
     {
-      id: 5,
+      id: 4,
       title: "Frontend Developer Intern",
       Company: "Avsars Technologies Pvt. Ltd.",
       location: "Uttar Pradesh, India",
@@ -100,10 +111,32 @@ export const Strings: StringsType = {
 
   work: [
     {
+      id: 0,
+      company: "Healthsetgo Services Private Limited",
+      location: "Gurugram, Haryana, India",
+      position: "SDE-1",
+      duration: "Aug 2025 - Current",
+      image: HealthSetGo,
+      tech_stack: ["React", "React-Native", "TypeScript", "Gitlab", "Java"],
+      projects: [
+        {
+          name: "Mobile App",
+          description: `MyHealth App by HealthSetGo provides a 360• holistic wellness platform for parents to track their children’s health.
+Track your child’s health reports, get smart recommendations and insights so you can take timely action on any health concerns`,
+        },
+        {
+          name: "School ERP Web App",
+          description:
+            "A comprehensive web-based ERP system for schools to manage student data, view generated health reports, and track vaccination records efficiently.",
+        },
+      ],
+    },
+    {
+      id: 1,
       company: "Xotiv Technologies",
       location: "Noida, U.P, India",
       position: "SDE-1",
-      duration: "May 2025 - Current",
+      duration: "May 2025 - Aug 2025",
       image: XotivLog,
       tech_stack: [
         "React",
@@ -120,16 +153,17 @@ export const Strings: StringsType = {
         {
           name: "Full-Stack Development",
           description:
-            "Working on cutting-edge web and mobile applications with full-stack responsibilities. Developing robust backend APIs using Node.js and Express.js, managing PostgreSQL databases, and building responsive frontend interfaces with React and React Native.",
+            "Worked on cutting-edge web and mobile applications with full-stack responsibilities. Developing robust backend APIs using Node.js and Express.js, managing PostgreSQL databases, and building responsive frontend interfaces with React and React Native.",
         },
         {
           name: "Backend Development",
           description:
-            "Designing and implementing scalable backend solutions, RESTful APIs, database optimization, and cloud infrastructure management using AWS services.",
+            "Designed and implemented scalable backend solutions, RESTful APIs, database optimization, and cloud infrastructure management using AWS services.",
         },
       ],
     },
     {
+      id: 2,
       company: "Tap Health Pvt. Ltd.",
       location: "Gurugram, Haryana, India",
       position: "SDE Intern",
@@ -151,6 +185,7 @@ export const Strings: StringsType = {
       ],
     },
     {
+      id: 3,
       company: "BetterWay",
       location: "Gurugram",
       position: "Frontend Intern",
@@ -180,6 +215,7 @@ export const Strings: StringsType = {
       ],
     },
     {
+      id: 4,
       company: "AVSARS TECHNOLOGIES",
       location: "Gorakhpur U.P",
       position: "Software Developer Intern",

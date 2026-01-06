@@ -27,6 +27,7 @@ import FirebaseIcon from "@assets/icons/Firebase.svg";
 import VscodoeIcon from "@assets/icons/vscodeIcon.svg";
 import PostmanIcon from "@assets/icons/PostmanIcon.svg";
 import CursorIcon from "@assets/icons/cursor.svg";
+import HealthSetGo from "@assets/images/healthSetGo.png";
 
 export {
   JsIcon,
@@ -58,4 +59,5 @@ export {
   PostmanIcon,
   VscodoeIcon,
   CursorIcon,
+  HealthSetGo,
 };

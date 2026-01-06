@@ -7,7 +7,6 @@ const Experience: React.FC<{
   isMobile: boolean;
 }> = ({ isMobile }) => {
   const [selectedCompany, setSelectedCompany] = useState<string | null>(null);
-
   return (
     <AnimatedSection id="experience">
       <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">

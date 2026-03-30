@@ -27,6 +27,10 @@ import FirebaseIcon from "@assets/icons/Firebase.svg";
 import VscodoeIcon from "@assets/icons/vscodeIcon.svg";
 import PostmanIcon from "@assets/icons/PostmanIcon.svg";
 import CursorIcon from "@assets/icons/cursor.svg";
+import hsgLogo from "@assets/images/hsgLogo.png";
+import hsgLogo_white from "@assets/images/hsgLogo_white.png";
+import playstore from "@assets/playstore.svg";
+import appstore from "@assets/appstore.svg";
 
 export {
   JsIcon,
@@ -58,4 +62,8 @@ export {
   PostmanIcon,
   VscodoeIcon,
   CursorIcon,
+  hsgLogo,
+  playstore,
+  appstore,
+  hsgLogo_white,
 };

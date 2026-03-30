@@ -6,6 +6,7 @@ import { DownloadSvg } from "@library/utils/Svgs";
 import { fetchResume } from "@utils/service";
 import { FC, useState } from "react";
 import Heading from "./Heading";
+import { Strings } from "@utils/constants";
 
 const Home: FC<{
   isMobile: boolean;
@@ -53,13 +54,13 @@ const Home: FC<{
                 </div>
                 <div className="text-center p-4 rounded-lg bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20">
                   <div className="text-2xl font-bold bg-linear2 bg-clip-text text-transparent">
-                    10+
+                    {Strings.projectsData?.length}+
                   </div>
                   <div className="text-sm text-gray-400">Projects</div>
                 </div>
                 <div className="text-center p-4 rounded-lg bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20">
                   <div className="text-2xl font-bold bg-linear2 bg-clip-text text-transparent">
-                    4
+                    {Strings.work?.length}
                   </div>
                   <div className="text-sm text-gray-400">Companies</div>
                 </div>

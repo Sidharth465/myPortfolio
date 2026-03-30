@@ -52,7 +52,7 @@ const App: FC = () => {
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <NavProvider>
-        <div className="bg-background">
+        <div className="">
           <Meteor />
           <Navbar />
           <Home isMobile={isMobile} />

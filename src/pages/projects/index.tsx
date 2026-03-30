@@ -1,3 +1,4 @@
+import { appstore, playstore } from "@assets/index";
 import AnimatedSection from "@library/components/AnimatedSection";
 import { Strings as data } from "@utils/constants";
 import React, { useState } from "react";
@@ -102,7 +103,7 @@ const Projects: React.FC = () => {
                 }
               >
                 {/* Project Card */}
-                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/50 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 h-full cursor-pointer">
+                <div className="relative flex-row overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/50 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 h-full cursor-pointer">
                   {/* Visit Site Button (top-right) */}
                   {project.link && (
                     <a
@@ -113,6 +114,28 @@ const Projects: React.FC = () => {
                       onClick={(e) => e.stopPropagation()}
                     >
                       Visit Site
+                    </a>
+                  )}
+                  {project.appStore && (
+                    <a
+                      href={project.appStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-4 right-16 z-10 shadow-lg transition-all duration-300 "
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <img src={appstore} className="h-6 w-6 object-fill" />
+                    </a>
+                  )}
+                  {project.playStore && (
+                    <a
+                      href={project.playStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-4 right-4 z-10 shadow-lg transition-all duration-300 "
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <img src={playstore} className="h-6 w-6 object-fill" />
                     </a>
                   )}
 

@@ -24,7 +24,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Poppins", sans-serif;
+    font-family: "font-playfair";
     font-weight: 600;
     line-height: 1.2;
   }
@@ -36,8 +36,9 @@
   a,
   button,
   input,
-  textarea {
-    font-family: "Inter", system-ui, sans-serif;
+  textarea,
+  text {
+    font-family: "font-playfair";
   }
 
   /* Better text rendering */

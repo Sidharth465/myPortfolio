@@ -39,7 +39,7 @@ const ExperienceCard: FC<{
                       <img
                         src={work?.image}
                         alt={work?.company}
-                        className="w-full h-full object-contain rounded-lg"
+                        className="w-full h-full object-contain rounded-lg "
                       />
                     </div>
                   </div>
@@ -158,11 +158,11 @@ const ExperienceCard: FC<{
             {/* Timeline Node */}
             <div className="relative z-10">
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg border-4 border-black">
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                <div className="w-8 h-8  rounded-full flex items-center justify-center">
                   <img
                     src={work?.image}
                     alt={work?.company}
-                    className="w-6 h-6 object-contain"
+                    className="w-h-7 h-7 object-contain rounded-full"
                   />
                 </div>
               </div>

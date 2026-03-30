@@ -17,6 +17,8 @@ import {
   XotivLog,
   richaco,
   rytclick,
+  hsgLogo,
+  hsgLogo_white,
 } from "@assets/index";
 
 export const Strings: StringsType = {
@@ -24,50 +26,6 @@ export const Strings: StringsType = {
 
 `,
 
-  experieceData: [
-    {
-      id: 0,
-      title: "SDE-1",
-      Company: "Xotiv Technologies",
-      location: "Noida, U.P, India",
-      timeSpan: "May 2025 - Current ",
-      duration: "",
-      type: "On-Site",
-      image: XotivLog,
-    },
-
-    {
-      id: 1,
-      title: "SDE Intern",
-      Company: "Tap Health Pvt. Ltd.",
-      location: "Gurugram, Haryana, India",
-      timeSpan: "Nov 2024 - Apr 2025 ",
-      duration: "",
-      type: "On-Site",
-      image: TapHealth,
-    },
-
-    {
-      id: 4,
-      title: "React Native Intern",
-      Company: "BetterWay",
-      location: "Gurugram, Haryana, India",
-      timeSpan: "Feb 2024 - Aug 2024 ",
-      duration: "7 months",
-      type: "On-Site",
-      image: betterway,
-    },
-    {
-      id: 5,
-      title: "Frontend Developer Intern",
-      Company: "Avsars Technologies Pvt. Ltd.",
-      location: "Uttar Pradesh, India",
-      timeSpan: "Aug 2023 - Feb 2024",
-      duration: "7 months",
-      type: "Remote",
-      image: GrocizyIcon,
-    },
-  ],
   personalDetail: {
     name: "Siddharth Verma",
     contact: "8744098062",
@@ -100,10 +58,38 @@ export const Strings: StringsType = {
 
   work: [
     {
+      company: "Healthsetgo Education",
+      location: "Sec-56, Gurugram, India",
+      position: "SDE-1 (React-Native)",
+      duration: "Aug 2025 - Current",
+      image: hsgLogo_white,
+      tech_stack: [
+        "React",
+        "React-Native",
+        "TypeScript",
+        "Android",
+        "AWS",
+        "REST APIs",
+        "Git",
+      ],
+      projects: [
+        {
+          name: "Mobile App Revamp",
+          description:
+            "Spearheading the architectural refactoring and performance optimization of the flagship React Native application. Migrating the codebase to a modular, component-driven structure to enhance scalability and developer velocity for the next-generation release.",
+        },
+        {
+          name: "Web Platform Development",
+          description:
+            "Architecting reusable frontend modules and leading refactoring efforts to decouple legacy code. Focused on improving system maintainability and streamlining the integration of complex new features through a modular UI approach.",
+        },
+      ],
+    },
+    {
       company: "Xotiv Technologies",
       location: "Noida, U.P, India",
       position: "SDE-1",
-      duration: "May 2025 - Current",
+      duration: "May 2025 - Aug 2025",
       image: XotivLog,
       tech_stack: [
         "React",
@@ -120,12 +106,12 @@ export const Strings: StringsType = {
         {
           name: "Full-Stack Development",
           description:
-            "Working on cutting-edge web and mobile applications with full-stack responsibilities. Developing robust backend APIs using Node.js and Express.js, managing PostgreSQL databases, and building responsive frontend interfaces with React and React Native.",
+            "Orchestrated the end-to-end development of high-performance web and mobile applications. Built robust backend APIs and managed PostgreSQL schemas while ensuring seamless synchronization with responsive frontend interfaces.",
         },
         {
-          name: "Backend Development",
+          name: "Cloud & Backend Logic",
           description:
-            "Designing and implementing scalable backend solutions, RESTful APIs, database optimization, and cloud infrastructure management using AWS services.",
+            "Engineered scalable RESTful services and optimized database queries for improved response times. Integrated AWS S3 for automated cloud storage and media management across the platform.",
         },
       ],
     },
@@ -146,7 +132,7 @@ export const Strings: StringsType = {
         {
           name: "Healthcare Applications",
           description:
-            "Developed healthcare-focused applications and contributed to improving patient care through innovative digital solutions.",
+            "Collaborated within a cross-functional team to build core modules for patient-centric digital solutions. Contributed to the full feature lifecycle, ensuring high-quality code delivery in a fast-paced healthcare tech environment.",
         },
       ],
     },
@@ -168,14 +154,14 @@ export const Strings: StringsType = {
       ],
       projects: [
         {
-          name: "BetterWay Web and Mobile App",
+          name: "Consumer Applications",
           description:
-            "Contributed to the design and development of the BetterWay web and mobile app using React Native and ShopifyRestyle, providing a user-friendly interface for clinic appointments and health information access. (Credit: Developed as part of my role at BetterWay)",
+            "Executed the frontend design of web and mobile interfaces using ShopifyRestyle, facilitating a seamless user journey for clinic appointments and health record accessibility.",
         },
         {
-          name: "Clinic App",
+          name: "Clinic Management App",
           description:
-            "Developed the Clinic App, leading to a 90% reduction in prescription filling time. Implemented features for appointment tracking, prescription management, and patient progress documentation. (Credit: Developed as part of my role at BetterWay)",
+            "Collaborated within a cross-functional team to build a specialized internal tool that reduced prescription filling time by 90%. Streamlined workflows for appointment tracking and patient progress documentation.",
         },
       ],
     },
@@ -188,14 +174,14 @@ export const Strings: StringsType = {
       tech_stack: ["React-Native"],
       projects: [
         {
-          name: "Grocizy Super Admin App",
+          name: "Grocizy Super Admin",
           description:
-            "Engineered the Grocery Super Admin app, integrating advanced filtering and search functionalities to enhance user navigation. The platform is now utilized by over 25 staff members to improve operational efficiency. (Credit: Developed as part of my role at AVSARS TECHNOLOGIES)",
+            "Implemented advanced filtering and search algorithms within the admin ecosystem, significantly improving operational efficiency for a team of 25+ staff members.",
         },
         {
-          name: "Grocizy Delivery Admin App",
+          name: "Delivery Management System",
           description:
-            "Designed and implemented a streamlined order delivery management system, optimizing the delivery process and updating records in the database. (Credit: Developed as part of my role at AVSARS TECHNOLOGIES)",
+            "Designed a real-time order management interface, optimizing the logistics workflow and ensuring accurate database synchronization for delivery records.",
         },
       ],
     },
@@ -204,12 +190,34 @@ export const Strings: StringsType = {
   // Separate projects data for future projects section
   projectsData: [
     {
+      id: 0,
+      name: "myHealth",
+      company: "HealthSetGo Education",
+      duration: "Aug 2025 - current",
+      description:
+        "Developed a 360° holistic wellness platform that enables parents to track children's health reports, receive AI-driven smart recommendations, and access a digital health card. The application focuses on early intervention and monitoring growth parameters for students across India.",
+      tech_stack: ["React-Native", "TypeScript", "AWS"],
+      image: hsgLogo_white,
+      category: "Health & Fitness",
+      appStore:
+        "https://apps.apple.com/in/app/myhealth-by-healthsetgo/id1526490102",
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.hsg.health.android",
+      highlights: [
+        "Real-time health report tracking from school-based medical screenings.",
+        "Integrated 'HealthSetGo Health Card' providing exclusive benefits from health partners.",
+        "AI-driven smart recommendations based on pediatric growth parameters.",
+        "Direct 'Speak to Health Expert' communication channel for parental support.",
+        "Automated tracking for BMI, growth milestones, and historical medical data.",
+      ],
+    },
+    {
       id: 1,
       name: "Tap Health App",
       company: "Tab Health Pvt. Ltd.",
       duration: "Nov 2024 - Apr 2025",
       description:
-        "Developed a comprehensive healthcare application focusing on patient care and medical consultation services. Built a modern healthcare platform with user-friendly interface and robust backend systems.",
+        "Collaborated on a modern healthcare ecosystem, contributing to the development of patient-care modules and medical consultation services. Focused on high-performance UI and secure data synchronization.",
       tech_stack: [
         "React-Native",
         "Node.js",
@@ -219,13 +227,15 @@ export const Strings: StringsType = {
       ],
       image: TapHealth,
       category: "Healthcare",
-      link: "https://apps.apple.com/in/app/tap-health-health-assistant/id6478812140",
+      appStore:
+        "https://apps.apple.com/in/app/tap-health-health-assistant/id6478812140",
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.taphealthapp&hl=en_IN&pli=1",
       highlights: [
-        "Patient management system",
-        "Medical consultation features",
-        "Healthcare data management",
+        "Modern healthcare platform for Diabetic patient",
+        "Diabetic Care module featuring real-time Blood Glucose logging and automated trend visualization.",
+        "Nutritional engine for tracking daily caloric intake and macronutrients, tailored for diabetic dietary management.",
         "Secure patient information",
-        "Modern healthcare platform",
       ],
     },
     {
@@ -247,7 +257,9 @@ export const Strings: StringsType = {
       ],
       image: betterway,
       category: "Healthcare",
-      link: "https://apps.apple.com/in/app/betterway/id6502288128",
+      appStore: "https://apps.apple.com/in/app/betterway/id6502288128",
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.betterway.user.app&hl=en_IN",
       highlights: [
         "Clinic appointment booking",
         "Health information access",

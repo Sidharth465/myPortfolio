@@ -35,13 +35,13 @@ const Heading = () => {
     <div className="space-y-8 lg:space-y-10  ">
       {/* Greeting and Name Section */}
       <div className="space-y-4">
-        <h2 className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-medium">
+        <h2 className="text-lg sm:text-xl font-playfair lg:text-2xl text-gray-300 font-medium">
           Hello, I'm
         </h2>
 
         {/* Name with typing effect - Fixed height to prevent layout shifts */}
         <div className="flex  items-center gap-2 h-16 sm:h-20 lg:h-28 ">
-          <h1 className="text-[2rem] sm:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] font-bold bg-linear2 bg-clip-text text-transparent leading-none whitespace-nowrap">
+          <h1 className="font-playfair text-[2rem] sm:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] font-bold bg-linear2 bg-clip-text text-transparent leading-none whitespace-nowrap">
             {displayedText}
           </h1>
           <span className="w-1 h-8 sm:h-10 lg:h-14 bg-gradient-to-b from-purple-500 to-pink-500 animate-pulse rounded-full flex-shrink-0"></span>
@@ -50,13 +50,13 @@ const Heading = () => {
 
       {/* Description - Fixed spacing */}
       <div className="max-w-2xl ">
-        <p className="text-base text-left sm:text-lg lg:text-xl text-gray-300 leading-relaxed">
+        <p className="text-base font-playfair text-left sm:text-base lg:text-xl text-gray-300 leading-relaxed">
           {Strings?.HomePara}
         </p>
       </div>
 
       {/* Tech Stack Preview - Fixed spacing */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 ">
         <span className="px-3 py-1 text-xs sm:text-sm bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300">
           React & React Native
         </span>

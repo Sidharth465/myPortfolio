@@ -1,5 +1,3 @@
-import { transform } from "typescript";
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -21,6 +19,7 @@ export default {
           "Roboto",
           "sans-serif",
         ],
+        playfair: ['"Playfair Display"', "serif"],
       },
       fontSize: {
         // Custom font sizes for better typography hierarchy

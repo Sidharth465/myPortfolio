@@ -31,6 +31,8 @@ interface ProjectData {
   category: string;
   highlights: string[];
   link?: string;
+  appStore?: string;
+  playStore?: string;
 }
 
 declare interface PersonalDetail {
@@ -64,7 +66,7 @@ declare interface Skill {
 
 declare interface StringsType {
   HomePara: string;
-  experieceData: Experience[];
+
   personalDetail: PersonalDetail;
   skillData: Skill[];
   githubLink: string;

@@ -7,6 +7,7 @@ import {
   FirebaseIcon,
   Git,
   HtmlIcon,
+  java,
   JsIcon,
   NodejsIcon,
   PostgreIcon,
@@ -31,6 +32,7 @@ const frontendSkills = [
   { name: "CSS", icon: CssIcon },
   { name: "JavaScript", icon: JsIcon },
   { name: "TypeScript", icon: Typescript },
+  { name: "Java", icon: java },
 ];
 
 const backendSkills = [

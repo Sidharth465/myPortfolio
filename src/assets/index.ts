@@ -31,6 +31,7 @@ import hsgLogo from "@assets/images/hsgLogo.png";
 import hsgLogo_white from "@assets/images/hsgLogo_white.png";
 import playstore from "@assets/playstore.svg";
 import appstore from "@assets/appstore.svg";
+import java from "@assets/icons/Java.png";
 
 export {
   JsIcon,
@@ -66,4 +67,5 @@ export {
   playstore,
   appstore,
   hsgLogo_white,
+  java,
 };

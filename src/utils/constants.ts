@@ -14,15 +14,13 @@ import {
   ReduxIcon,
   GrocizyIcon,
   TapHealth,
-  XotivLog,
   richaco,
   rytclick,
-  hsgLogo,
   hsgLogo_white,
 } from "@assets/index";
 
 export const Strings: StringsType = {
-  HomePara: `I’m Siddharth Verma, a full-stack developer with 2+ years of experience building scalable web and mobile applications. I specialize in React, React Native, Node.js, and PostgreSQL, with hands-on experience from internships and roles at Xotiv Technologies, Tab Health, BetterWay, and more. I’ve developed 10+ projects across healthcare, inventory, and admin management—delivering high-performance, user-friendly solutions. Always eager to learn and build, I turn ideas into impactful digital products.
+  HomePara: `I’m Siddharth Verma, a full-stack developer with 2+ years of experience building scalable web and mobile applications. I specialize in React, React Native, Node.js, and PostgreSQL, with hands-on experience from internships and roles at Xotiv Technologies, Tap Health, BetterWay, and more. I’ve developed 10+ projects across healthcare, inventory, and admin management—delivering high-performance, user-friendly solutions. Always eager to learn and build, I turn ideas into impactful digital products.
 
 `,
 
@@ -85,41 +83,41 @@ export const Strings: StringsType = {
         },
       ],
     },
-    {
-      company: "Xotiv Technologies",
-      location: "Noida, U.P, India",
-      position: "SDE-1",
-      duration: "May 2025 - Aug 2025",
-      image: XotivLog,
-      tech_stack: [
-        "React",
-        "React-Native",
-        "TypeScript",
-        "Node.js",
-        "Express.js",
-        "PostgreSQL",
-        "AWS",
-        "REST APIs",
-        "Git",
-      ],
-      projects: [
-        {
-          name: "Full-Stack Development",
-          description:
-            "Orchestrated the end-to-end development of high-performance web and mobile applications. Built robust backend APIs and managed PostgreSQL schemas while ensuring seamless synchronization with responsive frontend interfaces.",
-        },
-        {
-          name: "Cloud & Backend Logic",
-          description:
-            "Engineered scalable RESTful services and optimized database queries for improved response times. Integrated AWS S3 for automated cloud storage and media management across the platform.",
-        },
-      ],
-    },
+    // {
+    //   company: "Xotiv Technologies",
+    //   location: "Noida, U.P, India",
+    //   position: "SDE-1",
+    //   duration: "May 2025 - Aug 2025",
+    //   image: XotivLog,
+    //   tech_stack: [
+    //     "React",
+    //     "React-Native",
+    //     "TypeScript",
+    //     "Node.js",
+    //     "Express.js",
+    //     "PostgreSQL",
+    //     "AWS",
+    //     "REST APIs",
+    //     "Git",
+    //   ],
+    //   projects: [
+    //     {
+    //       name: "Full-Stack Development",
+    //       description:
+    //         "Orchestrated the end-to-end development of high-performance web and mobile applications. Built robust backend APIs and managed PostgreSQL schemas while ensuring seamless synchronization with responsive frontend interfaces.",
+    //     },
+    //     {
+    //       name: "Cloud & Backend Logic",
+    //       description:
+    //         "Engineered scalable RESTful services and optimized database queries for improved response times. Integrated AWS S3 for automated cloud storage and media management across the platform.",
+    //     },
+    //   ],
+    // },
     {
       company: "Tap Health Pvt. Ltd.",
       location: "Gurugram, Haryana, India",
       position: "SDE Intern",
-      duration: "Nov 2024 - Apr 2025",
+      duration: "Jan 2025 - Apr 2025",
       image: TapHealth,
       tech_stack: [
         "React",
@@ -214,8 +212,8 @@ export const Strings: StringsType = {
     {
       id: 1,
       name: "Tap Health App",
-      company: "Tab Health Pvt. Ltd.",
-      duration: "Nov 2024 - Apr 2025",
+      company: "Tap Health Pvt. Ltd.",
+      duration: "Jan 2024 - Apr 2025",
       description:
         "Collaborated on a modern healthcare ecosystem, contributing to the development of patient-care modules and medical consultation services. Focused on high-performance UI and secure data synchronization.",
       tech_stack: [

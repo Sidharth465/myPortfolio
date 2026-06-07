@@ -20,7 +20,7 @@ import {
 } from "@assets/index";
 
 export const Strings: StringsType = {
-  HomePara: `I’m Siddharth Verma, a full-stack developer with 2+ years of experience building scalable web and mobile applications. I specialize in React, React Native, Node.js, and PostgreSQL, with hands-on experience from internships and roles at Xotiv Technologies, Tab Health, BetterWay, and more. I’ve developed 10+ projects across healthcare, inventory, and admin management—delivering high-performance, user-friendly solutions. Always eager to learn and build, I turn ideas into impactful digital products.
+  HomePara: `I’m Siddharth Verma, a full-stack developer with 2+ years of experience building scalable web and mobile applications. I specialize in React, React Native, Node.js, and PostgreSQL, with hands-on experience from internships and roles at Xotiv Technologies, Tap Health, BetterWay, and more. I’ve developed 10+ projects across healthcare, inventory, and admin management—delivering high-performance, user-friendly solutions. Always eager to learn and build, I turn ideas into impactful digital products.
 
 `,
 
@@ -212,7 +212,7 @@ export const Strings: StringsType = {
     {
       id: 1,
       name: "Tap Health App",
-      company: "Tab Health Pvt. Ltd.",
+      company: "Tap Health Pvt. Ltd.",
       duration: "Jan 2024 - Apr 2025",
       description:
         "Collaborated on a modern healthcare ecosystem, contributing to the development of patient-care modules and medical consultation services. Focused on high-performance UI and secure data synchronization.",

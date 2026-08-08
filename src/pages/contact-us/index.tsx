@@ -1,6 +1,7 @@
 import AnimatedSection from "@library/components/AnimatedSection";
 import FloatingInput from "@library/components/FloatingInput";
 import Page from "@library/components/Page";
+import RevealItem from "@library/components/RevealItem";
 import { useNavContext } from "@library/context/NavContext";
 import { LoadingSvg } from "@library/utils/Svgs";
 import Footer from "@pages/footer";
@@ -107,149 +108,183 @@ const ContactUs: FC = () => {
   };
 
   return (
-    <AnimatedSection id="contactus">
-      <Page className="min-h-screen py-20">
+    <AnimatedSection id="contactus" variant="fade" stagger>
+      <Page
+        showTopDivider={false}
+        showBottomDivider={false}
+        className="py-12 sm:py-16 lg:py-20"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             {/* Header Section */}
-            <div className="text-center mb-16 space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-linear2 bg-clip-text text-transparent">
+            <div className="text-center mb-10 sm:mb-14 lg:mb-16 space-y-3 sm:space-y-4">
+              <h1
+                className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gradient px-2 reveal-child"
+                style={{ ["--reveal-i" as string]: 0 }}
+              >
                 Get In Touch
               </h1>
-              <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+              <p
+                className="text-sm sm:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed px-2 reveal-child"
+                style={{ ["--reveal-i" as string]: 1 }}
+              >
                 Have a project in mind or want to collaborate? I'd love to hear
                 from you!
               </p>
             </div>
 
-            {/* Contact Content */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+            {/* Contact Content — equal columns */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8 lg:items-stretch">
               {/* Contact Info */}
-              <div className="space-y-8">
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-6">
-                    Let's Connect
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed mb-8">
-                    I'm always open to discussing new opportunities, interesting
-                    projects, or just having a chat about technology and
-                    development.
-                  </p>
-                </div>
-
-                {/* Contact Details */}
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-white font-semibold">Email</h3>
-                      <p className="text-gray-400">
-                        siddharthverma465@gmail.com
+              <RevealItem
+                variant="left"
+                index={0}
+                className="min-w-0 h-full"
+              >
+                <div className="relative flex h-full flex-col overflow-hidden rounded-xl sm:rounded-2xl glass">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
+                  <div className="relative flex h-full flex-col p-4 sm:p-6 lg:p-8">
+                    <div className="mb-6 sm:mb-8">
+                      <h2 className="font-playfair text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
+                        Let's Connect
+                      </h2>
+                      <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-justify">
+                        I'm always open to discussing new opportunities,
+                        interesting projects, or just having a chat about
+                        technology and development.
                       </p>
                     </div>
-                  </div>
 
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-white font-semibold">Location</h3>
-                      <p className="text-gray-400">Delhi, India</p>
-                    </div>
-                  </div>
+                    <div className="mt-auto space-y-3 sm:space-y-4">
+                      <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl glass-soft min-w-0">
+                        <div className="w-10 h-10 shrink-0 glass-chip rounded-lg flex items-center justify-center">
+                          <svg
+                            className="w-5 h-5 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                            />
+                          </svg>
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="text-white font-semibold text-sm">
+                            Email
+                          </h3>
+                          <a
+                            href="mailto:siddharthverma465@gmail.com"
+                            className="text-gray-400 text-xs sm:text-sm break-all hover:text-white"
+                          >
+                            siddharthverma465@gmail.com
+                          </a>
+                        </div>
+                      </div>
 
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-white font-semibold">
-                        Response Time
-                      </h3>
-                      <p className="text-gray-400">Within 24 hours</p>
+                      <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl glass-soft">
+                        <div className="w-10 h-10 shrink-0 glass-chip rounded-lg flex items-center justify-center">
+                          <svg
+                            className="w-5 h-5 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                            />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <h3 className="text-white font-semibold text-sm">
+                            Location
+                          </h3>
+                          <p className="text-gray-400 text-xs sm:text-sm">
+                            Delhi, India
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl glass-soft">
+                        <div className="w-10 h-10 shrink-0 glass-chip rounded-lg flex items-center justify-center">
+                          <svg
+                            className="w-5 h-5 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <h3 className="text-white font-semibold text-sm">
+                            Response Time
+                          </h3>
+                          <p className="text-gray-400 text-xs sm:text-sm">
+                            Within 24 hours
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </RevealItem>
 
               {/* Contact Form */}
-              <div className="relative">
-                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/50 backdrop-blur-sm">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5"></div>
+              <RevealItem
+                variant="right"
+                index={1}
+                className="relative min-w-0 h-full"
+              >
+                <div className="relative flex h-full flex-col overflow-hidden rounded-xl sm:rounded-2xl glass">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
 
-                  <div className="relative p-6 sm:p-8">
-                    <h2 className="text-2xl font-bold text-white mb-6">
+                  <div className="relative flex h-full flex-col p-4 sm:p-6 lg:p-8">
+                    <h2 className="font-playfair text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
                       Send Message
                     </h2>
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid sm:grid-cols-2 gap-6">
-                        <FloatingInput
-                          label="Name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          required
-                          type="text"
-                          errorMessage={errors.name}
-                          isActive={formData?.name?.length > 0}
-                        />
-                        <FloatingInput
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          label="Email"
-                          required
-                          name="email"
-                          errorMessage={errors.email}
-                          isActive={formData?.email?.length > 0}
-                        />
-                      </div>
+                    <form
+                      onSubmit={handleSubmit}
+                      className="flex flex-1 flex-col space-y-4"
+                    >
+                      <FloatingInput
+                        label="Name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        type="text"
+                        errorMessage={errors.name}
+                        isActive={formData?.name?.length > 0}
+                      />
+                      <FloatingInput
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        label="Email"
+                        required
+                        name="email"
+                        errorMessage={errors.email}
+                        isActive={formData?.email?.length > 0}
+                      />
 
                       <FloatingInput
                         type="text"
@@ -266,7 +301,7 @@ const ContactUs: FC = () => {
                         type="hidden"
                         name="access_key"
                         value={accessKey}
-                      ></input>
+                      />
 
                       <button
                         type="submit"
@@ -276,7 +311,7 @@ const ContactUs: FC = () => {
                           !formData.message ||
                           isLoading
                         }
-                        className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+                        className="mt-auto w-full min-h-[44px] px-8 py-2.5 btn-electric disabled:opacity-50 disabled:cursor-not-allowed rounded-xl font-semibold text-white transition-all duration-300 hover:scale-[1.01] touch-manipulation"
                       >
                         {isLoading ? (
                           <div className="flex items-center justify-center gap-2">
@@ -290,7 +325,7 @@ const ContactUs: FC = () => {
                     </form>
                   </div>
                 </div>
-              </div>
+              </RevealItem>
             </div>
           </div>
         </div>

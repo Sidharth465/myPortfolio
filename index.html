@@ -3,48 +3,95 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/icon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/icon.png?v=3" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png?v=3" />
+  <meta name="theme-color" content="#050a14" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-  <!-- SEO Meta Tags -->
-  <title>TechBySid - Your Tech Hub</title>
-  <meta name="description" content="Explore the latest in technology, coding, and software development." />
+  <!-- Default SEO (overridden per-route by DocumentSeo) -->
+  <title>Siddharth Verma | Full-Stack Developer (React, React Native, Node.js)</title>
+  <meta name="description"
+    content="Portfolio of Siddharth Verma — full-stack developer with 2+ years building scalable web and mobile apps using React, React Native, Node.js, TypeScript, and PostgreSQL." />
   <meta name="keywords"
-    content="portfolio, developer portfolio, web developer, frontend, backend, full-stack, React, React Native" />
-  <meta name="author" content="Sidharth Verma" />
+    content="Siddharth Verma, TechBySid, full-stack developer, React, React Native, Node.js, TypeScript, portfolio, Delhi" />
+  <meta name="author" content="Siddharth Verma" />
+  <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="hMuqblS-Kx4IeHVz3egRDOIcLexdo82GP4UShkIyXhU" />
+  <link rel="canonical" href="https://techbysid.netlify.app/" />
 
-  <!-- Font Preconnect for better performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Primary Font: Poppins for headings -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
     rel="stylesheet">
 
-  <!-- Secondary Font: Inter for body text -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <meta property="og:title" content="TechBySid - Portfolio & Projects" />
+  <meta property="og:site_name" content="TechBySid" />
+  <meta property="og:title" content="Siddharth Verma | Full-Stack Developer" />
   <meta property="og:description"
-    content="Portfolio of Siddharth Verma: Full-stack developer specializing in React, Node.js, and modern web/mobile apps." />
-  <meta property="og:image" content="https://techbysid.netlify.app/thumbnail.png" />
+    content="Portfolio of Siddharth Verma: Full-stack developer specializing in React, React Native, Node.js, and modern web/mobile apps." />
+  <meta property="og:image" content="https://techbysid.netlify.app/thumbnail.png?v=3" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://techbysid.netlify.app/" />
   <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TechBySid - Portfolio & Projects" />
-  <meta name="twitter:description"
-    content="Portfolio of Siddharth Verma: Full-stack developer specializing in React, Node.js, and modern web/mobile apps." />
-  <meta name="twitter:image" content="https://techbysid.netlify.app/thumbnail.png" />
+  <meta property="og:locale" content="en_IN" />
 
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Siddharth Verma | Full-Stack Developer" />
+  <meta name="twitter:description"
+    content="Portfolio of Siddharth Verma: Full-stack developer specializing in React, React Native, Node.js, and modern web/mobile apps." />
+  <meta name="twitter:image" content="https://techbysid.netlify.app/thumbnail.png?v=3" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://techbysid.netlify.app/#website",
+          "url": "https://techbysid.netlify.app",
+          "name": "TechBySid",
+          "description": "Portfolio of Siddharth Verma — full-stack developer specializing in React, React Native, and Node.js.",
+          "publisher": { "@id": "https://techbysid.netlify.app/#person" },
+          "inLanguage": "en-IN"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://techbysid.netlify.app/#person",
+          "name": "Siddharth Verma",
+          "url": "https://techbysid.netlify.app",
+          "image": "https://techbysid.netlify.app/thumbnail.png?v=3",
+          "jobTitle": "Full-Stack Developer",
+          "email": "mailto:siddharthverma465@gmail.com",
+          "telephone": "+91-8744098062",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Delhi",
+            "addressCountry": "IN"
+          },
+          "sameAs": [
+            "https://github.com/Sidharth465",
+            "https://www.linkedin.com/in/siddharth-verma-b323b1175/",
+            "https://www.instagram.com/siddharthverma465/"
+          ],
+          "knowsAbout": [
+            "React",
+            "React Native",
+            "TypeScript",
+            "Node.js",
+            "PostgreSQL",
+            "Full-stack development"
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 
-<body style="background-color: black;">
+<body style="background-color: #050a14;">
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>

@@ -32,41 +32,37 @@ const Heading = () => {
   }, [displayedText, isErasing, currentWordIndex]);
 
   return (
-    <div className="space-y-8 lg:space-y-10  ">
-      {/* Greeting and Name Section */}
-      <div className="space-y-4">
-        <h2 className="text-lg sm:text-xl font-playfair lg:text-2xl text-gray-300 font-medium">
-          Hello, I'm
+    <div className="space-y-4 sm:space-y-5 lg:space-y-6 w-full min-w-0">
+      <div className="space-y-2 sm:space-y-3">
+        <h2 className="text-base sm:text-xl lg:text-2xl font-playfair text-gray-300 font-medium">
+          Hello, I&apos;m
         </h2>
 
-        {/* Name with typing effect - Fixed height to prevent layout shifts */}
-        <div className="flex  items-center gap-2 h-16 sm:h-20 lg:h-28 ">
-          <h1 className="font-playfair text-[2rem] sm:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] font-bold bg-linear2 bg-clip-text text-transparent leading-none whitespace-nowrap">
+        <div className="flex items-start sm:items-center gap-2 min-h-[2.75rem] sm:min-h-[3.5rem] lg:min-h-[4.25rem]">
+          <h1 className="font-playfair text-[clamp(1.5rem,6vw,3.25rem)] font-bold text-gradient leading-tight break-words hyphens-none">
             {displayedText}
+            <span className="ml-1 inline-block w-0.5 sm:w-1 h-[0.9em] align-[-0.1em] bg-white/20 animate-pulse rounded-full" />
           </h1>
-          <span className="w-1 h-8 sm:h-10 lg:h-14 bg-gradient-to-b from-purple-500 to-pink-500 animate-pulse rounded-full flex-shrink-0"></span>
         </div>
       </div>
 
-      {/* Description - Fixed spacing */}
-      <div className="max-w-2xl ">
-        <p className="text-base font-playfair text-left sm:text-base lg:text-xl text-gray-300 leading-relaxed">
+      <div className="max-w-2xl mx-auto lg:mx-0 w-full">
+        <p className="text-sm sm:text-base lg:text-lg text-justify text-gray-300 leading-loose tracking-wide">
           {Strings?.HomePara}
         </p>
       </div>
 
-      {/* Tech Stack Preview - Fixed spacing */}
-      <div className="flex flex-wrap gap-2 ">
-        <span className="px-3 py-1 text-xs sm:text-sm bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300">
+      <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+        <span className="px-2.5 sm:px-3 py-1 text-[11px] sm:text-sm glass-chip rounded-full text-gray-300">
           React & React Native
         </span>
-        <span className="px-3 py-1 text-xs sm:text-sm bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 rounded-full text-blue-300">
+        <span className="px-2.5 sm:px-3 py-1 text-[11px] sm:text-sm glass-chip rounded-full text-gray-300">
           Node.js & Express
         </span>
-        <span className="px-3 py-1 text-xs sm:text-sm bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full text-green-300">
+        <span className="px-2.5 sm:px-3 py-1 text-[11px] sm:text-sm glass-chip rounded-full text-gray-300">
           TypeScript
         </span>
-        <span className="px-3 py-1 text-xs sm:text-sm bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/30 rounded-full text-orange-300">
+        <span className="px-2.5 sm:px-3 py-1 text-[11px] sm:text-sm glass-chip rounded-full text-gray-300">
           PostgreSQL
         </span>
       </div>

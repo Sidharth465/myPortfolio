@@ -19,11 +19,11 @@ const CustomButton = ({
   return (
     <button
       style={{ pointerEvents: processing ? "none" : "auto" }}
-      className={`group relative flex items-center justify-center w-full sm:w-auto min-w-[200px] sm:min-w-[250px] h-12 sm:h-14 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-xl overflow-hidden cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-purple-500/25 transform hover:scale-105 active:scale-95 ${className}`}
+      className={`group relative flex items-center justify-center w-full sm:w-auto min-w-0 sm:min-w-[220px] max-w-full h-12 sm:h-14 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 btn-electric transform hover:scale-105 active:scale-95 touch-manipulation ${className}`}
       onClick={onClick}
     >
       {/* Background Animation */}
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0052cc] to-[#0066ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
       {/* Shimmer Effect */}
       <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-1000"></div>

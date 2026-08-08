@@ -44,8 +44,8 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
           errorMessage
             ? "border-red-500/50 bg-red-500/5"
             : isActiveOrFocused
-            ? "border-purple-500/50 bg-purple-500/5"
-            : "border-gray-600/50 bg-gray-800/50 hover:border-gray-500/50"
+            ? "border-white/20 bg-blue-400/5"
+            : "glass-chip hover:border-white/25"
         }`}
       >
         {/* Gradient Border Effect */}
@@ -54,7 +54,7 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
             isActiveOrFocused ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20"></div>
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-white/10 to-white/5"></div>
         </div>
 
         {/* Input/Textarea */}
@@ -63,14 +63,14 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
             <textarea
               id={name}
               name={name}
-              rows={5}
+              rows={3}
               value={value}
               onChange={onChange}
               required={required}
               placeholder=""
               onFocus={handleFocus}
               onBlur={handleBlur}
-              className="w-full p-4 pt-8 bg-transparent text-white rounded-xl outline-none placeholder-transparent resize-none text-sm sm:text-base transition-colors duration-300"
+              className="w-full px-3.5 pb-2.5 pt-6 bg-transparent text-white rounded-xl outline-none placeholder-transparent resize-none text-sm transition-colors duration-300 min-h-[5.5rem]"
             />
           ) : (
             <input
@@ -83,7 +83,7 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
               placeholder=""
               onFocus={handleFocus}
               onBlur={handleBlur}
-              className="w-full p-4 pt-8 h-14 sm:h-16 bg-transparent text-white rounded-xl outline-none placeholder-transparent text-sm sm:text-base transition-colors duration-300"
+              className="w-full h-11 px-3.5 pb-2 pt-5 bg-transparent text-white rounded-xl outline-none placeholder-transparent text-sm transition-colors duration-300"
             />
           )}
         </div>
@@ -91,10 +91,12 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
         {/* Floating Label */}
         <label
           htmlFor={name}
-          className={`absolute left-4 transition-all duration-300 pointer-events-none ${
+          className={`absolute left-3.5 transition-all duration-300 pointer-events-none ${
             isActiveOrFocused
-              ? "top-2 text-xs sm:text-sm text-purple-400 font-medium"
-              : "top-4 text-sm sm:text-base text-gray-400"
+              ? "top-1.5 translate-y-0 text-[10px] sm:text-xs text-white font-medium"
+              : isTextarea
+              ? "top-3.5 translate-y-0 text-sm text-gray-400"
+              : "top-1/2 -translate-y-1/2 text-sm text-gray-400"
           }`}
         >
           {label}
@@ -103,7 +105,7 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
 
         {/* Focus Indicator */}
         {isActiveOrFocused && (
-          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#0066ff]"></div>
         )}
       </div>
 

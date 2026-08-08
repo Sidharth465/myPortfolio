@@ -1,9 +1,11 @@
 import AnimatedSection from "@library/components/AnimatedSection";
+import DocumentSeo from "../../seo/DocumentSeo";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
     <div className="flex min-h-[100svh] w-full items-center justify-center bg-[#050a14] px-4">
+      <DocumentSeo page="notFound" />
       <AnimatedSection variant="scale">
         <div className="flex flex-col items-center gap-5 text-center">
           <h1 className="text-gradient text-4xl font-bold sm:text-6xl">

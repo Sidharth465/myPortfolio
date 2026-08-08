@@ -25,6 +25,10 @@ export default function DocumentSeo({ page }: DocumentSeoProps) {
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="robots" content={seo.robots ?? "index, follow"} />
+      <meta
+        name="google-site-verification"
+        content="hMuqblS-Kx4IeHVz3egRDOIcLexdo82GP4UShkIyXhU"
+      />
       <meta name="author" content="Siddharth Verma" />
       <meta
         name="keywords"

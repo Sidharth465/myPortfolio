@@ -1,32 +1,16 @@
-import Meteor from "@library/components/Meteor";
+import AmbientBackground from "@library/components/AmbientBackground";
+import ScrollProgress from "@library/components/ScrollProgress";
 import ContactUs from "@pages/contact-us";
 import Experience from "@pages/experience";
 import Home from "@pages/home";
 import Projects from "@pages/projects";
 import SkillsCard from "@pages/skills/Skills";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "./library/components/Navbar";
 import { NavProvider } from "@library/context/NavContext";
 
 const App: FC = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-
-    // Check on mount
-    checkMobile();
-
-    // Add event listener for window resize
-    window.addEventListener("resize", checkMobile);
-
-    // Cleanup
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   return (
     <>
       <Helmet>
@@ -52,15 +36,17 @@ const App: FC = () => {
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <NavProvider>
-        <div className="">
-          <Meteor />
+        <div className="relative min-h-[100svh] bg-[#050a14]">
+          <AmbientBackground />
           <Navbar />
-          <Home isMobile={isMobile} />
-          <Experience isMobile={isMobile} />
-          <SkillsCard />
-          <Projects />
-          <ContactUs />
-          {/* <Footer /> */}
+          <ScrollProgress />
+          <div className="relative z-10 w-full pt-[3.5rem] sm:pt-16 lg:pt-20">
+            <Home />
+            <Experience />
+            <SkillsCard />
+            <Projects />
+            <ContactUs />
+          </div>
         </div>
       </NavProvider>
     </>

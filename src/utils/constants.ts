@@ -33,7 +33,7 @@ export const Strings: StringsType = {
     course: "B-Tech, Computer Science Engineering (Completed)",
     session: "2021-2025",
     experience: "2",
-    totalProject: "10",
+    totalProject: "12",
   },
   skillData: [
     { id: 1, title: "React", imageUrl: ReactIcon },
@@ -211,6 +211,42 @@ export const Strings: StringsType = {
     },
     {
       id: 1,
+      name: "HealthSetGo Foundation",
+      company: "HealthSetGo Education",
+      duration: "Aug 2025 - current",
+      description:
+        "Built the public web presence for HealthSetGo Foundation, showcasing the organization's mission, programs, and impact in school-based health and wellness.",
+      tech_stack: ["React", "TypeScript", "Tailwind CSS"],
+      image: hsgLogo_white,
+      category: "Web Development",
+      link: "https://healthsetgofoundation.com/",
+      highlights: [
+        "Public-facing foundation website",
+        "Responsive layout across devices",
+        "Clear program and impact storytelling",
+        "Modular frontend structure for ongoing content updates",
+      ],
+    },
+    {
+      id: 2,
+      name: "HealthSetGo School Dashboard",
+      company: "HealthSetGo Education",
+      duration: "Aug 2025 - current",
+      description:
+        "Developed a school admin dashboard for managing student health data, screenings, and school-level operations within the HealthSetGo education platform.",
+      tech_stack: ["React", "TypeScript", "REST APIs"],
+      image: hsgLogo_white,
+      category: "Web Development",
+      link: "https://school.healthsetgoeducation.com/login",
+      highlights: [
+        "School login and dashboard workflows",
+        "Student health and screening management",
+        "Admin tooling for school operations",
+        "Demo access available on request",
+      ],
+    },
+    {
+      id: 3,
       name: "Tap Health App",
       company: "Tap Health Pvt. Ltd.",
       duration: "Jan 2024 - Apr 2025",
@@ -237,7 +273,7 @@ export const Strings: StringsType = {
       ],
     },
     {
-      id: 2,
+      id: 4,
       name: "BetterWay App",
       company: "BetterWay",
       duration: "Feb 2024 - Aug 2024",
@@ -267,7 +303,7 @@ export const Strings: StringsType = {
       ],
     },
     {
-      id: 3,
+      id: 5,
       name: "Aalsi.co",
       company: "Client Project",
       duration: "2024",
@@ -292,7 +328,7 @@ export const Strings: StringsType = {
       ],
     },
     {
-      id: 4,
+      id: 6,
       name: "Clinic App",
       company: "BetterWay",
       duration: "Feb 2024 - Aug 2024",
@@ -310,7 +346,7 @@ export const Strings: StringsType = {
       ],
     },
     {
-      id: 5,
+      id: 7,
       name: "Gims Mobile/Tablet App",
       company: "Richaco Exports",
       duration: "Dec 2024 - Jan 2025",
@@ -328,7 +364,7 @@ export const Strings: StringsType = {
       ],
     },
     {
-      id: 6,
+      id: 8,
       name: "Gims Inventory App",
       company: "Richaco Exports",
       duration: "Dec 2024 - Jan 2025",
@@ -346,7 +382,7 @@ export const Strings: StringsType = {
       ],
     },
     {
-      id: 7,
+      id: 9,
       name: "Harmony & Harmony Pro App",
       company: "Ryt Click",
       duration: "Aug 2024 - Nov 2024",

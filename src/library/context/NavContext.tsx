@@ -19,7 +19,7 @@ const NavContext = createContext<NavContextType | null>(null);
 export const NavProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [activeSection, setActiveSection] = useState("#home");
+  const [activeSection, setActiveSection] = useState("home");
   const [toasts, setToasts] = useState<
     { id: number; message: string; type: "success" | "info" | "error" }[]
   >([]);

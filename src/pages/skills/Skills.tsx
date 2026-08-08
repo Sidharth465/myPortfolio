@@ -20,6 +20,7 @@ import {
   Xcode,
 } from "@assets/index";
 import AnimatedSection from "@library/components/AnimatedSection";
+import RevealItem from "@library/components/RevealItem";
 import Page from "@library/components/Page";
 import { FC } from "react";
 
@@ -53,36 +54,42 @@ const otherSkills = [
 ];
 
 const SkillsCard: FC = () => {
-  const renderSkillGroup = (title: string, skills: typeof frontendSkills) => (
-    <div className="w-full lg:w-[32%] mb-8">
+  const renderSkillGroup = (
+    title: string,
+    skills: typeof frontendSkills,
+    index: number
+  ) => (
+    <RevealItem
+      key={title}
+      variant="scale"
+      index={index}
+      step={110}
+      className="w-full min-w-0 h-full"
+    >
       <div className="group relative h-full">
-        {/* Card Container */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/50 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 h-full">
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="relative overflow-hidden rounded-xl sm:rounded-2xl glass glass-hover transition-all duration-500 h-full">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-          <div className="relative p-6 h-full">
-            {/* Header */}
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold bg-linear2 bg-clip-text text-transparent mb-2">
+          <div className="relative p-4 sm:p-6 h-full">
+            <div className="text-center mb-5 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
                 {title}
               </h2>
-              <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+              <div className="w-12 sm:w-16 h-1 bg-white/20 mx-auto rounded-full" />
             </div>
 
-            {/* Skills Grid */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-2 sm:gap-4">
               {skills.map((skill) => (
-                <div key={skill.name} className="group/skill">
-                  <div className="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-700/50 border border-gray-600/30 hover:border-purple-500/50 transition-all duration-300 hover:bg-gradient-to-br hover:from-purple-500/10 hover:to-pink-500/10">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center p-1 flex-shrink-0">
+                <div key={skill.name} className="group/skill min-w-0">
+                  <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-xl glass-chip hover:border-white/20 transition-all duration-300 hover:bg-gradient-to-br hover:from-white/5 hover:to-transparent">
+                    <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center p-1 flex-shrink-0">
                       <img
                         src={skill.icon}
                         alt={skill.name}
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <span className="text-sm sm:text-base font-medium text-white group-hover/skill:text-purple-300 transition-colors truncate">
+                    <span className="text-[11px] sm:text-sm lg:text-base font-medium text-white group-hover/skill:text-gray-300 transition-colors truncate">
                       {skill.name}
                     </span>
                   </div>
@@ -92,40 +99,47 @@ const SkillsCard: FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </RevealItem>
   );
 
   return (
-    <AnimatedSection id="skills">
-      <Page showBottomDivider={false} className="min-h-screen py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header Section */}
-          <div className="text-center mb-16 space-y-4">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-linear2 bg-clip-text text-transparent">
+    <AnimatedSection id="skills" variant="fade" stagger>
+      <Page showBottomDivider={false} className="min-h-[100svh] py-12 sm:py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="text-center mb-10 sm:mb-14 lg:mb-16 space-y-3 sm:space-y-4">
+            <h1
+              className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gradient px-2 reveal-child"
+              style={{ ["--reveal-i" as string]: 0 }}
+            >
               Skills & Expertise
             </h1>
-            <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <p
+              className="text-sm sm:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed px-2 reveal-child"
+              style={{ ["--reveal-i" as string]: 1 }}
+            >
               Here are the technologies and tools I've been working with to
               create amazing digital experiences
             </p>
           </div>
 
-          {/* Skills Grid */}
-          <div className="flex flex-col lg:flex-row gap-8 justify-center">
-            {renderSkillGroup("Frontend", frontendSkills)}
-            {renderSkillGroup("Backend", backendSkills)}
-            {renderSkillGroup("Tools & Others", otherSkills)}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            {renderSkillGroup("Frontend", frontendSkills, 0)}
+            {renderSkillGroup("Backend", backendSkills, 1)}
+            {renderSkillGroup("Tools & Others", otherSkills, 2)}
           </div>
 
-          {/* Additional Info */}
-          <div className="mt-16 text-center">
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30">
-              <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
-              <span className="text-sm text-gray-300">
+          <RevealItem
+            variant="fade"
+            index={3}
+            className="mt-10 sm:mt-16 text-center px-2"
+          >
+            <div className="inline-flex max-w-full items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full glass-chip">
+              <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse shrink-0" />
+              <span className="text-xs sm:text-sm text-gray-300 text-left">
                 Continuously learning and exploring new technologies
               </span>
             </div>
-          </div>
+          </RevealItem>
         </div>
       </Page>
     </AnimatedSection>

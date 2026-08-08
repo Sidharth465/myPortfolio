@@ -1,5 +1,6 @@
 import { appstore, playstore } from "@assets/index";
 import AnimatedSection from "@library/components/AnimatedSection";
+import RevealItem from "@library/components/RevealItem";
 import { Strings as data } from "@utils/constants";
 import React, { useState } from "react";
 
@@ -14,7 +15,6 @@ const Projects: React.FC = () => {
 
   const categories = ["All", "Mobile", "Web"];
 
-  // Filter projects by new category
   const filteredProjects =
     selectedCategory === "All"
       ? data?.projectsData
@@ -23,65 +23,81 @@ const Projects: React.FC = () => {
         );
 
   return (
-    <AnimatedSection id="projects">
-      <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto">
-          {/* Header Section */}
-          <div className="text-center mb-16 space-y-4">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-linear2 bg-clip-text text-transparent">
+    <AnimatedSection id="projects" variant="fade" stagger>
+      <div className="min-h-[100svh] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-10 sm:mb-14 lg:mb-16 space-y-3 sm:space-y-4">
+            <h1
+              className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gradient px-2 reveal-child"
+              style={{ ["--reveal-i" as string]: 0 }}
+            >
               Featured Projects
             </h1>
-            <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <p
+              className="text-sm sm:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed px-2 reveal-child"
+              style={{ ["--reveal-i" as string]: 1 }}
+            >
               A showcase of my recent projects, demonstrating my skills in
               full-stack development, mobile applications, and innovative
               solutions
             </p>
 
-            {/* Project Stats */}
-            <div className="flex justify-center mt-8">
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold bg-linear2 bg-clip-text text-transparent">
+            <div
+              className="flex justify-center mt-6 sm:mt-8 reveal-child"
+              style={{ ["--reveal-i" as string]: 2 }}
+            >
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 w-full max-w-lg sm:max-w-none">
+                <div className="text-center glass-soft rounded-xl p-3 sm:bg-transparent sm:border-transparent sm:p-0">
+                  <div className="text-xl sm:text-3xl font-bold text-white">
                     {data?.projectsData?.length || 0}
                   </div>
-                  <div className="text-sm text-gray-400">Projects</div>
+                  <div className="text-xs sm:text-sm text-gray-400">Projects</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold bg-linear2 bg-clip-text text-transparent">
+                <div className="text-center glass-soft rounded-xl p-3 sm:bg-transparent sm:border-transparent sm:p-0">
+                  <div className="text-xl sm:text-3xl font-bold text-white">
                     {categories.length - 1}
                   </div>
-                  <div className="text-sm text-gray-400">Categories</div>
+                  <div className="text-xs sm:text-sm text-gray-400">
+                    Categories
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold bg-linear2 bg-clip-text text-transparent">
+                <div className="text-center glass-soft rounded-xl p-3 sm:bg-transparent sm:border-transparent sm:p-0">
+                  <div className="text-xl sm:text-3xl font-bold text-white">
                     {data?.projectsData?.reduce(
                       (acc, project) => acc + project.tech_stack.length,
                       0
                     ) || 0}
                   </div>
-                  <div className="text-sm text-gray-400">Technologies</div>
+                  <div className="text-xs sm:text-sm text-gray-400">
+                    Technologies
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold bg-linear2 bg-clip-text text-transparent">
+                <div className="text-center glass-soft rounded-xl p-3 sm:bg-transparent sm:border-transparent sm:p-0">
+                  <div className="text-xl sm:text-3xl font-bold text-white">
                     3
                   </div>
-                  <div className="text-sm text-gray-400">Companies</div>
+                  <div className="text-xs sm:text-sm text-gray-400">
+                    Companies
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Category Filter */}
-          <div className="flex justify-center mb-12">
-            <div className="flex flex-wrap gap-3 justify-center">
+          <div
+            className="flex justify-center mb-8 sm:mb-12 reveal-child"
+            style={{ ["--reveal-i" as string]: 3 }}
+          >
+            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
               {categories.map((category) => (
                 <button
                   key={category}
+                  type="button"
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+                  className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 touch-manipulation ${
                     selectedCategory === category
-                      ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/25"
-                      : "bg-gray-800/50 text-gray-300 hover:text-white hover:bg-gray-700/50 border border-gray-600/50"
+                      ? "bg-[#0066ff] text-white shadow-lg"
+                      : "glass-chip text-gray-300 hover:text-white hover:border-white/15"
                   }`}
                 >
                   {category}
@@ -90,166 +106,171 @@ const Projects: React.FC = () => {
             </div>
           </div>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects?.map((project) => (
-              <div
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            {filteredProjects?.map((project, i) => (
+              <RevealItem
                 key={project.id}
-                className="group relative"
-                onClick={() =>
-                  setSelectedProject(
-                    selectedProject === project.id ? null : project.id
-                  )
-                }
+                variant="up"
+                index={i}
+                step={80}
+                className="min-w-0 h-full"
               >
-                {/* Project Card */}
-                <div className="relative flex-row overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/50 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 h-full cursor-pointer">
-                  {/* Visit Site Button (top-right) */}
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="absolute top-4 right-4 z-10 px-4 py-1.5 text-xs font-semibold bg-gradient-to-r from-blue-500/80 to-purple-500/80 text-white rounded-full shadow-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300 border border-blue-500/30"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      Visit Site
-                    </a>
-                  )}
-                  {project.appStore && (
-                    <a
-                      href={project.appStore}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="absolute top-4 right-16 z-10 shadow-lg transition-all duration-300 "
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <img src={appstore} className="h-6 w-6 object-fill" />
-                    </a>
-                  )}
-                  {project.playStore && (
-                    <a
-                      href={project.playStore}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="absolute top-4 right-4 z-10 shadow-lg transition-all duration-300 "
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <img src={playstore} className="h-6 w-6 object-fill" />
-                    </a>
-                  )}
+                <div
+                  className="group relative min-w-0 h-full"
+                  onClick={() =>
+                    setSelectedProject(
+                      selectedProject === project.id ? null : project.id
+                    )
+                  }
+                >
+                  <div className="relative flex flex-col overflow-hidden rounded-xl sm:rounded-2xl glass glass-hover transition-all duration-500 h-full cursor-pointer">
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative p-4 sm:p-6 h-full flex flex-col">
+                      <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+                        <div className="flex-shrink-0">
+                          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl glass-soft flex items-center justify-center p-1.5 sm:p-2">
+                            <img
+                              src={project.image}
+                              alt={project.company}
+                              className="w-full h-full object-contain rounded-lg"
+                            />
+                          </div>
+                        </div>
 
-                  <div className="relative p-6 h-full flex flex-col">
-                    {/* Header */}
-                    <div className="flex items-start gap-4 mb-4">
-                      {/* Company Logo */}
-                      <div className="flex-shrink-0">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center p-2">
-                          <img
-                            src={project.image}
-                            alt={project.company}
-                            className="w-full h-full object-contain rounded-lg"
-                          />
+                        <div className="flex-1 min-w-0 pr-1">
+                          <h3 className="text-base sm:text-lg font-bold text-white mb-0.5 sm:mb-1 break-words">
+                            {project.name}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-gray-400 mb-2 break-words">
+                            {project.company}
+                          </p>
+                          <div className="inline-flex items-center px-2 py-1 rounded-full text-[10px] sm:text-xs font-medium bg-gradient-to-r from-white/10 to-white/5 border border-white/10 text-gray-300">
+                            {project.category}
+                          </div>
                         </div>
                       </div>
 
-                      {/* Project Info */}
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-lg font-bold text-white mb-1 truncate">
-                          {project.name}
-                        </h3>
-                        <p className="text-sm text-gray-400 mb-2">
-                          {project.company}
-                        </p>
-                        <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-300">
-                          {project.category}
+                      {(project.link ||
+                        project.appStore ||
+                        project.playStore) && (
+                        <div className="mb-3 sm:mb-4 flex flex-wrap items-center gap-2">
+                          {project.link && (
+                            <a
+                              href={project.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-3 py-1.5 text-[11px] sm:text-xs font-semibold bg-[#0066ff] text-white rounded-full border border-white/10 touch-manipulation"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              Visit Site
+                            </a>
+                          )}
+                          {project.appStore && (
+                            <a
+                              href={project.appStore}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex p-1.5 glass-chip rounded-lg touch-manipulation"
+                              onClick={(e) => e.stopPropagation()}
+                              aria-label="App Store"
+                            >
+                              <img
+                                src={appstore}
+                                alt=""
+                                className="h-5 w-5 object-contain"
+                              />
+                            </a>
+                          )}
+                          {project.playStore && (
+                            <a
+                              href={project.playStore}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex p-1.5 glass-chip rounded-lg touch-manipulation"
+                              onClick={(e) => e.stopPropagation()}
+                              aria-label="Play Store"
+                            >
+                              <img
+                                src={playstore}
+                                alt=""
+                                className="h-5 w-5 object-contain"
+                              />
+                            </a>
+                          )}
                         </div>
-                      </div>
-                    </div>
+                      )}
 
-                    {/* Duration */}
-                    {/* <p className="text-xs text-gray-500 mb-4">
-                      {project.duration}
-                    </p> */}
+                      <p className="text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4 flex-1 leading-relaxed">
+                        {project.description}
+                      </p>
 
-                    {/* Description */}
-                    <p className="text-sm text-gray-400 mb-4 flex-1">
-                      {project.description}
-                    </p>
-
-                    {/* Tech Stack */}
-                    <div className="mb-4">
-                      <h4 className="text-xs font-semibold text-gray-300 mb-2">
-                        Tech Stack
-                      </h4>
-                      <div className="flex flex-wrap gap-1">
-                        {project.tech_stack.slice(0, 4).map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-2 py-1 text-xs font-medium bg-gray-800/50 text-gray-300 rounded-md border border-gray-600/30"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                        {project.tech_stack.length > 4 && (
-                          <span className="px-2 py-1 text-xs font-medium bg-gray-800/50 text-gray-400 rounded-md border border-gray-600/30">
-                            +{project.tech_stack.length - 4}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Expand/Collapse Indicator */}
-                    <div className="flex justify-center items-center gap-2">
-                      {/* Expand/Collapse Arrow */}
-                      <svg
-                        className={`w-5 h-5 text-purple-300 transition-transform duration-300 ${
-                          selectedProject === project.id ? "rotate-180" : ""
-                        }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </div>
-
-                    {/* Expanded Content */}
-                    {selectedProject === project.id && (
-                      <div className="mt-4 pt-4 border-t border-gray-700/50">
-                        <h4 className="text-sm font-semibold text-white mb-3">
-                          Key Highlights
+                      <div className="mb-3 sm:mb-4">
+                        <h4 className="text-[11px] sm:text-xs font-semibold text-gray-300 mb-2">
+                          Tech Stack
                         </h4>
-                        <ul className="space-y-2">
-                          {project.highlights.map((highlight, index) => (
-                            <li key={index} className="flex items-start gap-2">
-                              <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
-                              <span className="text-xs text-gray-400">
-                                {highlight}
-                              </span>
-                            </li>
+                        <div className="flex flex-wrap gap-1">
+                          {project.tech_stack.slice(0, 4).map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-2 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium glass-chip text-gray-300 rounded-md"
+                            >
+                              {tech}
+                            </span>
                           ))}
-                        </ul>
+                          {project.tech_stack.length > 4 && (
+                            <span className="px-2 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium glass-chip text-gray-400 rounded-md">
+                              +{project.tech_stack.length - 4}
+                            </span>
+                          )}
+                        </div>
                       </div>
-                    )}
+
+                      <div className="flex justify-center items-center gap-2 pt-1">
+                        <svg
+                          className={`w-5 h-5 text-gray-300 transition-transform duration-300 ${
+                            selectedProject === project.id ? "rotate-180" : ""
+                          }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </div>
+
+                      {selectedProject === project.id && (
+                        <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-white/10">
+                          <h4 className="text-xs sm:text-sm font-semibold text-white mb-2 sm:mb-3">
+                            Key Highlights
+                          </h4>
+                          <ul className="space-y-2">
+                            {project.highlights.map((highlight, index) => (
+                              <li key={index} className="flex items-start gap-2">
+                                <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0" />
+                                <span className="text-[11px] sm:text-xs text-gray-400 leading-relaxed">
+                                  {highlight}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </RevealItem>
             ))}
           </div>
 
-          {/* Empty State */}
           {(!filteredProjects || filteredProjects.length === 0) && (
             <div className="text-center py-12">
-              <p className="text-gray-400 text-lg">
+              <p className="text-gray-400 text-base sm:text-lg">
                 No projects found in this category.
               </p>
             </div>

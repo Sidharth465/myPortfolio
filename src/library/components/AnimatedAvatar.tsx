@@ -1,4 +1,4 @@
-import Avatar from "@assets/images/professional_image.png";
+import Avatar from "@assets/images/professional_image.webp";
 import { FC } from "react";
 import SkillsIcons from "./SkillsIcons";
 

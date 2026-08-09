@@ -20,7 +20,7 @@ import {
 } from "@assets/index";
 
 export const Strings: StringsType = {
-  HomePara: `I’m Siddharth Verma, a Software Development Engineer with 2+ years of experience building scalable, high-performance mobile and web applications. Specializing in the React Native ecosystem, Node.js and PostgreSQL, I transform complex product requirements into seamless digital experiences. From architecting robust healthcare platforms to optimizing complex admin systems, I build products that are scalable under the hood and engaging for the user.
+  HomePara: `Hi, I’m Siddharth Verma, a Software Development Engineer with 2+ years of experience building scalable, high-performance mobile and web applications. Specializing in the React Native ecosystem, Node.js and PostgreSQL, I’ve engineered 10+ impactful projects across the healthcare and inventory management sectors for companies like Tap Health, BetterWay and Xotiv Technologies. I am passionate about modern architecture and performance tuning. Whether it means migrating legacy codebases, architecting robust platforms or reducing data load times by over 95%, I love turning complex requirements into lightning-fast digital products that are scalable under the hood and engaging for the user.
 
 `,
 

@@ -1,7 +1,7 @@
 declare interface ButtonProps {
   title?: string;
   processing?: boolean;
-  IconLeft?: React.ComponentType<any>;
+  IconLeft?: React.ComponentType;
   className?: string;
 }
 

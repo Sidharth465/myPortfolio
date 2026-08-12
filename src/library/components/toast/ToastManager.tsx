@@ -1,9 +1,15 @@
 import React from "react";
 import Toast from "./Toast";
 
+type ToastItem = {
+  id: number;
+  message: string;
+  type: "success" | "info" | "error";
+};
+
 type ToastProps = {
-  toasts: { id: number; message: string; type: "success" | "info" | "error" }[];
-  setToasts: (toasts: any[]) => void;
+  toasts: ToastItem[];
+  setToasts: (toasts: ToastItem[]) => void;
 };
 
 const ToastManager: React.FC<ToastProps> = ({ toasts, setToasts }) => {

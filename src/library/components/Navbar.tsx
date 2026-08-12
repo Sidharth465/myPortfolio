@@ -2,7 +2,6 @@ import { Github, Instagram, LinkedIn } from "@assets/index";
 import { Strings } from "@utils/constants";
 import { CloseIcon, MenuIcon } from "@utils/Svgs";
 import { FC, useEffect, useId, useState } from "react";
-import { Link } from "react-router-dom";
 import ContactImageurlBox from "./ContactImageurlBox";
 import { useNavContext } from "@library/context/NavContext";
 import { useScrollSpy } from "@library/hooks/useScrollSpy";
@@ -88,21 +87,8 @@ const Navbar: FC = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[100] glass-nav supports-[backdrop-filter]:bg-black/40">
-      <nav
-        className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl"
-        aria-label="Primary"
-      >
-        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
-          <Link
-            to="/"
-            className="flex-shrink-0 min-w-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30 rounded-sm"
-            aria-label="Portfolio home"
-          >
-            <span className="text-xl sm:text-2xl lg:text-3xl font-playfair font-bold text-gradient">
-              Portfolio
-            </span>
-          </Link>
-
+      <nav className="container  px-4 sm:px-6 lg:px-8 " aria-label="Primary">
+        <div className="flex items-center justify-end h-14 sm:h-16 lg:h-20">
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             <ul className="flex items-center gap-5 xl:gap-8">
               {navItems.map((item) => {
@@ -171,7 +157,12 @@ const Navbar: FC = () => {
         </div>
 
         {isNavOpen && (
-          <div id={menuId} className="lg:hidden pb-4" role="dialog" aria-label="Mobile menu">
+          <div
+            id={menuId}
+            className="lg:hidden pb-4"
+            role="dialog"
+            aria-label="Mobile menu"
+          >
             <div className="px-2 pt-2 pb-3 space-y-1 glass rounded-xl mt-1 max-h-[calc(100svh-4rem)] overflow-y-auto">
               <ul className="space-y-1">
                 {navItems.map((item) => {

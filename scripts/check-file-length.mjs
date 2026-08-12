@@ -36,17 +36,25 @@ function walkDir(dir) {
 function getChangedFilesInPr() {
   const baseRef = process.env.GITHUB_BASE_REF ?? "main";
 
-  execSync(`git fetch origin ${baseRef} --depth=1`, { stdio: "pipe" });
+  try {
+    execSync(`git fetch origin ${baseRef} --depth=1`, { stdio: "pipe" });
 
-  const output = execSync(
-    `git diff --name-only --diff-filter=ACMRT origin/${baseRef}...HEAD`,
-    { encoding: "utf8" },
-  );
+    const output = execSync(
+      `git diff --name-only --diff-filter=ACMRT origin/${baseRef}...HEAD`,
+      { encoding: "utf8" },
+    );
 
-  return output
-    .trim()
-    .split("\n")
-    .filter((file) => file && isSourceFile(file));
+    return output
+      .trim()
+      .split("\n")
+      .filter((file) => file && isSourceFile(file));
+  } catch (error) {
+    console.warn(
+      `Could not diff against origin/${baseRef}, checking all source files instead.`,
+    );
+    console.warn(error instanceof Error ? error.message : error);
+    return walkDir(SCAN_ROOT);
+  }
 }
 
 function getFilesToCheck() {

@@ -2,7 +2,6 @@ import { Github, Instagram, LinkedIn } from "@assets/index";
 import { Strings } from "@utils/constants";
 import { CloseIcon, MenuIcon } from "@utils/Svgs";
 import { FC, useEffect, useId, useState } from "react";
-import { Link } from "react-router-dom";
 import ContactImageurlBox from "./ContactImageurlBox";
 import { useNavContext } from "@library/context/NavContext";
 import { useScrollSpy } from "@library/hooks/useScrollSpy";

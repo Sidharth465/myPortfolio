@@ -22,21 +22,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: "npm"
+          cache: "yarn"
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
 
       - name: Check file length (max 500 lines)
-        run: npm run check:file-length
+        run: yarn check:file-length
         env:
           MAX_FILE_LINES: 500
 
       - name: Lint
-        run: npm run lint
+        run: yarn lint
 
       - name: Run tests
-        run: npm test
+        run: yarn test
 
       - name: Build
-        run: npm run build
+        run: yarn build

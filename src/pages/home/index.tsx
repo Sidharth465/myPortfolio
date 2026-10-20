@@ -4,24 +4,11 @@ import CustomButton from "@library/components/CustomButton";
 import Page from "@library/components/Page";
 import { DownloadSvg } from "@library/utils/Svgs";
 import { fetchResume } from "@utils/service";
-import { FC, useState } from "react";
+import { FC } from "react";
 import Heading from "./Heading";
 import { Strings } from "@utils/constants";
 
 const Home: FC = () => {
-  const [processing, setProcessing] = useState(false);
-
-  const downloadResume = async () => {
-    setProcessing(true);
-    try {
-      await fetchResume("/resume");
-    } catch (error) {
-      alert(`Error Downloading Resume ${error} `);
-    } finally {
-      setProcessing(false);
-    }
-  };
-
   return (
     <AnimatedSection id="home" variant="fade" delay={60} stagger>
       <Page
@@ -39,8 +26,7 @@ const Home: FC = () => {
                 style={{ ["--reveal-i" as string]: 0 }}
               >
                 <CustomButton
-                  processing={processing}
-                  onClick={downloadResume}
+                  onClick={fetchResume}
                   title="Download Resume"
                   IconLeft={() => <DownloadSvg />}
                   className="transform hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-xl max-w-full"

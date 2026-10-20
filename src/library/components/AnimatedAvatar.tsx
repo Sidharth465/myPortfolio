@@ -14,7 +14,7 @@ const AnimatedAvatar: FC = () => {
         <img
           className="relative h-36 w-36 xs:h-44 xs:w-44 sm:h-52 sm:w-52 lg:h-56 lg:w-56 xl:h-64 xl:w-64 rounded-full object-cover object-top border border-white/10 shadow-2xl"
           src={Avatar}
-          alt="Siddharth Verma"
+          alt="Sidharth Verma"
         />
       </div>
 

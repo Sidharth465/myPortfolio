@@ -29,12 +29,15 @@ export default function DocumentSeo({ page }: DocumentSeoProps) {
         name="google-site-verification"
         content="hMuqblS-Kx4IeHVz3egRDOIcLexdo82GP4UShkIyXhU"
       />
-      <meta name="author" content="Siddharth Verma" />
+      <meta name="author" content="Sidharth Verma" />
       <meta
         name="keywords"
-        content="Siddharth Verma, TechBySid, full-stack developer, React, React Native, Node.js, TypeScript, portfolio, Delhi"
+        content="Sidharth Verma, TechBySid, full-stack developer, React, React Native, Node.js, TypeScript, portfolio, Delhi"
       />
-      <link rel="canonical" href={page === "notFound" ? absoluteUrl("/") : url} />
+      <link
+        rel="canonical"
+        href={page === "notFound" ? absoluteUrl("/") : url}
+      />
 
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:title" content={seo.title} />

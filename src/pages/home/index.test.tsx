@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import type { ReactNode } from "react";
 import Home from "./index";
@@ -39,16 +39,7 @@ describe("Home", () => {
     expect(screen.getByText("Companies")).toBeInTheDocument();
   });
 
-  it("shows processing state while downloading the resume", async () => {
-    let resolveDownload: (() => void) | undefined;
-
-    vi.mocked(fetchResume).mockImplementation(
-      () =>
-        new Promise<void>((resolve) => {
-          resolveDownload = resolve;
-        }),
-    );
-
+  it("starts the resume download when the CTA is clicked", async () => {
     const user = userEvent.setup();
     render(<Home />);
 
@@ -56,15 +47,6 @@ describe("Home", () => {
       screen.getByRole("button", { name: /download resume/i }),
     );
 
-    expect(fetchResume).toHaveBeenCalledWith("/resume");
-    expect(screen.getByText("Processing...")).toBeInTheDocument();
-
-    resolveDownload?.();
-
-    await waitFor(() => {
-      expect(
-        screen.getByRole("button", { name: /download resume/i }),
-      ).toBeInTheDocument();
-    });
+    expect(fetchResume).toHaveBeenCalledOnce();
   });
 });

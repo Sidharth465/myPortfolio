@@ -81,7 +81,6 @@ const Navbar: FC = () => {
       behavior: "smooth",
     });
 
-    setActiveSection(item.id);
     setIsNavOpen(false);
   };
 

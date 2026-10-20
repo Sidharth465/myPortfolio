@@ -15,7 +15,8 @@ export const postContactData = async (data: Record<string, unknown>) => {
   return result;
 };
 
-export const fetchResume = (endpoint: string) => {
-  const url = `${import.meta.env.VITE_BASE_URL}${endpoint}`;
-  window.open(url, "_blank"); // This bypasses CORS
+export const fetchResume = () => {
+  const url =
+    "https://drive.google.com/uc?export=download&id=1OpYE1Iyizt2yGmoZMyeEUOJTB3F-v0Av";
+  window.open(url, "_blank", "noopener,noreferrer");
 };

@@ -2,7 +2,7 @@
 export const SITE_URL = "https://techbysid.netlify.app";
 
 export const SITE_NAME = "TechBySid";
-export const PERSON_NAME = "Siddharth Verma";
+export const PERSON_NAME = "Sidharth Verma";
 
 export type SeoPageKey = "home" | "notFound";
 
@@ -16,9 +16,10 @@ export type PageSeo = {
 
 export const pageSeo: Record<SeoPageKey, PageSeo> = {
   home: {
-    title: "Siddharth Verma | Full-Stack Developer (React, React Native, Node.js)",
+    title:
+      "Sidharth Verma | Full-Stack Developer (React, React Native, Node.js)",
     description:
-      "Portfolio of Siddharth Verma — full-stack developer with 2+ years building scalable web and mobile apps using React, React Native, Node.js, TypeScript, and PostgreSQL.",
+      "Portfolio of Sidharth Verma — full-stack developer with 2+ years building scalable web and mobile apps using React, React Native, Node.js, TypeScript, and PostgreSQL.",
     path: "/",
     robots: "index, follow",
     type: "website",
